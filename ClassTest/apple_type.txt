@@ -1,0 +1,25 @@
+﻿1 SWFJ 華盛頓富士
+
+2 VAFJ 美國富士
+
+3 SAFJ 美國富士
+
+4 VJFJ 日本蜜富士
+
+5 SNFJ 紐西蘭玫瑰富士
+
+6 VFJF 美國富士
+
+蘋果
+
+
+蘋果編碼:
+超市類：S
+地攤類：V
+
+
+華盛頓富士蘋果   ==> Washington_FuJi_Apple  ==>  WFJ
+美國加拉蘋果  ==>American_JaLa_Apple  ==>  AJL
+美國富士蘋果  ==>American_FuJi_Apple  ==>  AFJ
+日本蜜富士  ==>  Japan_FuJi_Apple ==> JFJ
+紐西蘭玫瑰富士  ==>  New Zealand_FuJi_Apple  ⇒ NFJ
