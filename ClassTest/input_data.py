@@ -1,17 +1,12 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 30 21:19:10 2018
-
-@author: william
-"""
 
 # 定義使用的套件
 import tensorflow as tf
 import numpy as np
 import os
 
-#%%
-# 讀取資料
+#%% 讀取資料
+
 def get_files(file_dir):
 
     wfj = []           #0華盛頓富士
@@ -64,23 +59,19 @@ def get_batch(image, label, image_W, image_H, batch_size, capacity):
     image = tf.cast(image, tf.string)
     label = tf.cast(label, tf.int32)
 
-    # make an input queue
+   
     input_queue = tf.train.slice_input_producer([image, label])
     
     label = input_queue[1]
     image_contents = tf.read_file(input_queue[0])
     image = tf.image.decode_jpeg(image_contents, channels=3)
     
-    ######################################
-    # data argumentation should go to here
-    ######################################
+    
     #將圖片進行裁剪
     image = tf.image.resize_image_with_crop_or_pad(image, image_W, image_H)    
     
     image = tf.image.resize_images(image, [image_H, image_W], method=tf.image.ResizeMethod.NEAREST_NEIGHBOR)
     
-    # 如果要看到正常圖片，请註解108行（标准化）和 130行（image_batch = tf.cast(image_batch, tf.float32)）
-    # 訓練時記得拿掉
     image = tf.image.per_image_standardization(image)
     
     image_batch, label_batch = tf.train.batch([image, label],
@@ -93,8 +84,8 @@ def get_batch(image, label, image_W, image_H, batch_size, capacity):
     
     return image_batch, label_batch
 
-#%%
-# TEST
+#%% TEST
+# training時註解
 """
 import matplotlib.pyplot as plt
 

@@ -1,32 +1,27 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Apr 19 16:12:50 2018
 
-@author: william
-Youtube: https://www.youtube.com/channel/UCVCSn4qQXTDAtGWpWAe4Plw
-"""
-#%%
+
 import os
 import numpy as np
 import tensorflow as tf
 import input_data
 import model
 
-#%%
+#%% Import library
 
 N_CLASSES = 4
-IMG_W = 208  # resize the image, if the input image is too large, training will be very slow.
+IMG_W = 208  
 IMG_H = 208
 BATCH_SIZE = 14
 CAPACITY = 30
-MAX_STEP = 600 # with current parameters, it is suggested to use MAX_STEP>10k
-learning_rate = 0.0001 # with current parameters, it is suggested to use learning rate<0.0001
+MAX_STEP = 600 
+learning_rate = 0.0001 
 
 
-#%%
+#%% Training
 def run_training():
     
-    # you need to change the directories to yours.
+    
     train_dir = 'data//train//'
     logs_train_dir = 'logs//./train//./'
     
@@ -76,22 +71,16 @@ def run_training():
     sess.close()
     
 
-#%% Evaluate one image
-#when training, comment the following codes.
-
-#Test one image
+#%% Test
 
 def get_one_image(file_dir):
-    """
-    Randomly pick one image from test data
-    Return: ndarray
-    """
+    
     from PIL import Image
     import matplotlib.pyplot as plt
     test =[]
     for file in os.listdir(file_dir):
         test.append(file_dir + file)
-    print('There are %d test pictures\n' %(len(test)))
+    print('There are %d test apples\n' %(len(test)))
 
     n = len(test)
     ind = np.random.randint(0, n)
@@ -105,9 +94,7 @@ def get_one_image(file_dir):
     return image
 
 def test_one_image():
-    """
-    Test one image with the saved models and parameters
-    """
+   
     test_dir = 'data//test//'
     logs_train_dir = 'logs//./train//./'
     test_image = get_one_image(test_dir)
