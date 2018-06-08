@@ -6,7 +6,7 @@ import os
 import math
 
 #%%
-train_dir = 'data\\train\\'
+train_dir = '/data/train/'
 
 def get_files(file_dir, ratio):
     wfj = []           #0華盛頓富士
@@ -17,6 +17,8 @@ def get_files(file_dir, ratio):
     label_jfj = []
     nfj = []           #3紐西蘭玫瑰富士
     label_nfj = []
+    cfj = []           #智利富士
+    label_cfj = []
     # 用檔名判斷並將圖片放到相對應的分類籃
     for file in os.listdir(file_dir):
         name = file.split(sep='_')
@@ -29,10 +31,13 @@ def get_files(file_dir, ratio):
         elif name[1] == 'JFJ':
             jfj.append(file_dir + file)
             label_jfj.append(3)
-        else:
+        elif name[1] == 'NFJ':
             nfj.append(file_dir + file)
             label_nfj.append(4)
-    print("There are %d Washington FuJi Apple\nThere are %d American FuJi Apple\nThere are %d Japan FuJi Apple\nThere are %d New Zealand FuJi Apple" % (len(wfj), len(afj), len(jfj), len(nfj)))
+        else:
+            cfj.append(file_dir + file)
+            label_cfj.append(5)
+    print("There are %d Washington FuJi Apple\nThere are %d American FuJi Apple\nThere are %d Japan FuJi Apple\nThere are %d New Zealand FuJi Apple\nThere are %d New Chile FuJi Apple" % (len(wfj), len(afj), len(jfj), len(nfj), len(cfj)))
     
     # 總共幾張訓練圖
     train =[]

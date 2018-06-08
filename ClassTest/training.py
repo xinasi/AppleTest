@@ -11,7 +11,7 @@ test_dir = 'data//test//'
 train_logs_dir = 'logs//./train//./'
 val_logs_dir = 'logs//./val//./'
 
-N_CLASSES = 4
+N_CLASSES = 5
 IMG_W = 208
 IMG_H = 208
 RATIO = 0.2
@@ -88,11 +88,12 @@ def training():
 
 #%%
 # 測試圖片準確度，訓練時註解
-"""
+
 def get_one_image(file_dir):
     
     from PIL import Image
     import matplotlib.pyplot as plt
+    import os
     test =[]
     for file in os.listdir(file_dir):
         test.append(file_dir + file)
@@ -100,9 +101,11 @@ def get_one_image(file_dir):
 
     n = len(test)
     ind = np.random.randint(0, n)
-    print(ind)
+    print(ind+1) #位在資料夾第幾張
     img_test = test[ind]
-
+    img_name = img_test.split('//',2) 
+    print(img_name[2]) #只有檔案名稱
+    #print (img_test) #整個檔案路徑
     image = Image.open(img_test)
     plt.imshow(image)
     image = image.resize([208, 208])
@@ -118,7 +121,7 @@ def test_one_image():
 
     with tf.Graph().as_default():
         BATCH_SIZE = 1
-        N_CLASSES = 4
+        N_CLASSES = 5
 
         image = tf.cast(test_image, tf.float32)
         image = tf.image.per_image_standardization(image)
@@ -150,10 +153,11 @@ def test_one_image():
                 print('It is American FuJi Apple with possibility %.6f' %prediction[:, 1])
             elif max_index == 2:
                 print('It is Japan FuJi Apple with possibility %.6f' %prediction[:, 2])
-            else:
+            elif max_index == 3:
                 print('It is New Zealand FuJi Apple with possibility %.6f' %prediction[:, 3])
-                
-"""
+            else:
+                print('It is Chile FuJi Apple with possibility %.6f' %prediction[:, 4])
+            
                 
 
 
