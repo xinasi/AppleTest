@@ -7,17 +7,17 @@ import model
 
 # 路徑
 train_dir = 'data//train//'
-test_dir = 'data//test//'
+test_dir = 'data//test//nfj//'
 train_logs_dir = 'logs//./train//./'
 val_logs_dir = 'logs//./val//./'
 
-N_CLASSES = 5
+N_CLASSES = 4
 IMG_W = 208
 IMG_H = 208
 RATIO = 0.2
 BATCH_SIZE = 15
 CAPACITY = 256
-MAX_STEP = 70
+MAX_STEP = 100
 learning_rate = 0.001
 
 
@@ -44,7 +44,7 @@ def training():
 
     x = tf.placeholder(tf.float32, shape=[BATCH_SIZE, IMG_W, IMG_H, 3])
     y_ = tf.placeholder(tf.int16, shape=[BATCH_SIZE])
-
+    
 
     with tf.Session() as sess:
         saver = tf.train.Saver()
@@ -88,7 +88,6 @@ def training():
 
 #%%
 # 測試圖片準確度，訓練時註解
-
 def get_one_image(file_dir):
     
     from PIL import Image
@@ -103,8 +102,9 @@ def get_one_image(file_dir):
     ind = np.random.randint(0, n)
     print(ind+1) #位在資料夾第幾張
     img_test = test[ind]
-    img_name = img_test.split('//',2) 
-    print(img_name[2]) #只有檔案名稱
+    img_name = img_test.split('//',3)
+    img_place = img_name[3].split('_',4)
+    print(img_name[3]) #只有檔案名稱
     #print (img_test) #整個檔案路徑
     image = Image.open(img_test)
     plt.imshow(image)
@@ -114,14 +114,24 @@ def get_one_image(file_dir):
 
 def test_one_image():
    
-    test_dir = 'data//test//'
+    test_dir = 'data//test//nfj//'
     logs_train_dir = 'logs//./train//./'
     test_image = get_one_image(test_dir)
     
+    test =[]
+    for file in os.listdir('data//test//nfj//'):
+        test.append('data//test//nfj//' + file)
+
+    n = len(test)
+    ind = np.random.randint(0, n)
+    print(ind+1) #位在資料夾第幾張
+    img_test = test[ind]
+    img_name = img_test.split('//',3)
+    img_place = img_name[3].split('_',4)
 
     with tf.Graph().as_default():
         BATCH_SIZE = 1
-        N_CLASSES = 5
+        N_CLASSES = 4
 
         image = tf.cast(test_image, tf.float32)
         image = tf.image.per_image_standardization(image)
@@ -147,24 +157,23 @@ def test_one_image():
 
             prediction = sess.run(logit, feed_dict={x: test_image})
             max_index = np.argmax(prediction)
+           
+            
             if max_index == 0:
                 print('It is Washington FuJi Apple with possibility %.6f' %prediction[:, 0])
             elif max_index == 1:
                 print('It is American FuJi Apple with possibility %.6f' %prediction[:, 1])
             elif max_index == 2:
-                print('It is Japan FuJi Apple with possibility %.6f' %prediction[:, 2])
-            elif max_index == 3:
-                print('It is New Zealand FuJi Apple with possibility %.6f' %prediction[:, 3])
+                print('It is New Zealand FuJi Apple with possibility %.6f' %prediction[:, 2])
             else:
-                print('It is Chile FuJi Apple with possibility %.6f' %prediction[:, 4])
+                print('It is Chile FuJi Apple with possibility %.6f' %prediction[:, 3])
             
-                
-
-
-
-
-
-
+            """
+            print('It is American FuJi Apple with possibility %.6f' %prediction[:, 1])
+            print('It is Chile FuJi Apple with possibility %.6f' %prediction[:, 3])
+            print('It is Washington FuJi Apple with possibility %.6f' %prediction[:, 0])
+            print('It is New Zealand FuJi Apple with possibility %.6f' %prediction[:, 2])   
+            """ 
 
 
 

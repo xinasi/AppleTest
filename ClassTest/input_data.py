@@ -13,31 +13,26 @@ def get_files(file_dir, ratio):
     label_wfj = []
     afj = []           #1美國富士
     label_afj = []
-    jfj = []           #2日本蜜富士
-    label_jfj = []
-    nfj = []           #3紐西蘭玫瑰富士
+    nfj = []           #2紐西蘭玫瑰富士
     label_nfj = []
-    cfj = []           #智利富士
+    cfj = []           #3智利富士
     label_cfj = []
     # 用檔名判斷並將圖片放到相對應的分類籃
     for file in os.listdir(file_dir):
         name = file.split(sep='_')
         if name[1] == 'WFJ':
             wfj.append(file_dir + file)
-            label_wfj.append(1)
+            label_wfj.append(0)
         elif name[1] == 'AFJ':
             afj.append(file_dir + file)
-            label_afj.append(2)
-        elif name[1] == 'JFJ':
-            jfj.append(file_dir + file)
-            label_jfj.append(3)
+            label_afj.append(1)
         elif name[1] == 'NFJ':
             nfj.append(file_dir + file)
-            label_nfj.append(4)
+            label_nfj.append(2)
         else:
             cfj.append(file_dir + file)
-            label_cfj.append(5)
-    print("There are %d Washington FuJi Apple\nThere are %d American FuJi Apple\nThere are %d Japan FuJi Apple\nThere are %d New Zealand FuJi Apple\nThere are %d New Chile FuJi Apple" % (len(wfj), len(afj), len(jfj), len(nfj), len(cfj)))
+            label_cfj.append(3)
+    print("There are %d Washington FuJi Apple\nThere are %d American FuJi Apple\nThere are %d New Zealand FuJi Apple\nThere are %d New Chile FuJi Apple" % (len(wfj), len(afj), len(nfj), len(cfj)))
     
     # 總共幾張訓練圖
     train =[]
@@ -47,8 +42,8 @@ def get_files(file_dir, ratio):
     
 
     # 打亂圖片順序
-    image_list = np.hstack((wfj, afj, jfj, nfj))
-    label_list = np.hstack((label_wfj, label_afj, label_jfj, label_nfj))
+    image_list = np.hstack((wfj, afj, nfj,cfj))
+    label_list = np.hstack((label_wfj, label_afj, label_nfj,label_cfj))
 
     temp = np.array([image_list, label_list])
     temp = temp.transpose()
