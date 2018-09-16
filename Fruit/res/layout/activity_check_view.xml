@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckView"
+    tools:layout_editor_absoluteY="25dp">
+
+    <CheckBox
+        android:id="@+id/sweet"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="56dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:checked="false"
+        android:text="甜"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/enough"
+        app:layout_constraintDimensionRatio="4:1"
+        app:layout_constraintEnd_toStartOf="@+id/acid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/acid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="56dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="30dp"
+        android:checked="false"
+        android:text="酸"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/n_enoght"
+        app:layout_constraintDimensionRatio="4:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sweet"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/n_enoght"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="56dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:checked="false"
+        android:text="水分不足"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/soft"
+        app:layout_constraintDimensionRatio="4:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/enough"
+        app:layout_constraintTop_toBottomOf="@+id/acid" />
+
+    <CheckBox
+        android:id="@+id/enough"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="56dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginStart="40dp"
+        android:checked="false"
+        android:text="水分足夠"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/solid"
+        app:layout_constraintDimensionRatio="4:1"
+        app:layout_constraintEnd_toStartOf="@+id/n_enoght"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sweet" />
+
+    <CheckBox
+        android:id="@+id/solid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="56dp"
+        android:checked="false"
+        android:text="扎實"
+        android:textStyle="bold"
+        app:layout_constraintDimensionRatio="4:1"
+        app:layout_constraintEnd_toStartOf="@+id/soft"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enough" />
+
+    <CheckBox
+        android:id="@+id/soft"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="56dp"
+        android:checked="false"
+        android:text="軟嫩"
+        android:textStyle="bold"
+        app:layout_constraintDimensionRatio="4:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/solid"
+        app:layout_constraintTop_toBottomOf="@+id/n_enoght" />
+
+
+</android.support.constraint.ConstraintLayout>
