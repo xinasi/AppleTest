@@ -26,7 +26,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <uses-sdk
-        android:minSdkVersion="15"
+        android:minSdkVersion="21"
         android:targetSdkVersion="27" />
 
     <application android:allowBackup="true"
@@ -46,9 +46,10 @@
         </activity>
         <activity android:name=".ClassifierActivity" />
         <activity android:name=".PlaceActivity" />
-        <activity android:name=".LibraryHome"/>
-        <activity android:name=".CheckView"/>
-        <activity android:name=".ImagesView"/>
+        <activity android:name=".TypeActivity" />
+        <activity android:name=".LibraryHome" />
+        <activity android:name=".CheckView" />
+        <activity android:name=".ImagesView" />
 
 
     </application>

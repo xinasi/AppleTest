@@ -451,7 +451,6 @@ public abstract class CameraActivity extends Activity
   }
 
   protected abstract void processImage();
-  protected abstract void onHello();
   protected abstract void onPreviewSizeChosen(final Size size, final int rotation);
   protected abstract int getLayoutId();
   protected abstract Size getDesiredPreviewFrameSize();

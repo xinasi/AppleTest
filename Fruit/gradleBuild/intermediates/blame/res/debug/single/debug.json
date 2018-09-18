@@ -412,12 +412,12 @@
         "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ee5e06b655e8ca1c6dca6af90c4e37e4\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
-        "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\anim_abc_grow_fade_in_from_bottom.xml.flat",
-        "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ee5e06b655e8ca1c6dca6af90c4e37e4\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
-    },
-    {
         "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\drawable_abc_seekbar_track_material.xml.flat",
         "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ee5e06b655e8ca1c6dca6af90c4e37e4\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\anim_abc_grow_fade_in_from_bottom.xml.flat",
+        "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ee5e06b655e8ca1c6dca6af90c4e37e4\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
         "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\color_abc_secondary_text_material_dark.xml.flat",
@@ -584,10 +584,6 @@
         "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ee5e06b655e8ca1c6dca6af90c4e37e4\\res\\color-v23\\abc_tint_edittext.xml"
     },
     {
-        "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\drawable_abc_btn_colored_material.xml.flat",
-        "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ee5e06b655e8ca1c6dca6af90c4e37e4\\res\\drawable\\abc_btn_colored_material.xml"
-    },
-    {
         "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ee5e06b655e8ca1c6dca6af90c4e37e4\\res\\drawable-mdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
     },
@@ -744,14 +740,6 @@
         "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ee5e06b655e8ca1c6dca6af90c4e37e4\\res\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
-        "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\color_abc_btn_colored_borderless_text_material.xml.flat",
-        "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ee5e06b655e8ca1c6dca6af90c4e37e4\\res\\color\\abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\layout-v16_notification_template_custom_big.xml.flat",
-        "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\fceb0a90e7be619c36794219be2443ef\\res\\layout-v16\\notification_template_custom_big.xml"
-    },
-    {
         "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ee5e06b655e8ca1c6dca6af90c4e37e4\\res\\drawable-xxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
@@ -838,10 +826,6 @@
     {
         "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\anim_abc_popup_enter.xml.flat",
         "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ee5e06b655e8ca1c6dca6af90c4e37e4\\res\\anim\\abc_popup_enter.xml"
-    },
-    {
-        "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\layout_notification_template_custom_big.xml.flat",
-        "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\fceb0a90e7be619c36794219be2443ef\\res\\layout\\notification_template_custom_big.xml"
     },
     {
         "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\drawable-v21_abc_btn_colored_material.xml.flat",
@@ -1064,10 +1048,6 @@
         "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ee5e06b655e8ca1c6dca6af90c4e37e4\\res\\drawable-xhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\layout_notification_action.xml.flat",
-        "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\fceb0a90e7be619c36794219be2443ef\\res\\layout\\notification_action.xml"
-    },
-    {
         "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ee5e06b655e8ca1c6dca6af90c4e37e4\\res\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
@@ -1220,10 +1200,6 @@
         "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ee5e06b655e8ca1c6dca6af90c4e37e4\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
-        "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\drawable_abc_edit_text_material.xml.flat",
-        "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ee5e06b655e8ca1c6dca6af90c4e37e4\\res\\drawable\\abc_edit_text_material.xml"
-    },
-    {
         "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ee5e06b655e8ca1c6dca6af90c4e37e4\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
@@ -1234,10 +1210,6 @@
     {
         "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ee5e06b655e8ca1c6dca6af90c4e37e4\\res\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\layout_notification_action_tombstone.xml.flat",
-        "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\fceb0a90e7be619c36794219be2443ef\\res\\layout\\notification_action_tombstone.xml"
     },
     {
         "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\anim_abc_slide_in_bottom.xml.flat",
@@ -1302,10 +1274,6 @@
     {
         "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ee5e06b655e8ca1c6dca6af90c4e37e4\\res\\drawable-xhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\layout_notification_template_icon_group.xml.flat",
-        "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\fceb0a90e7be619c36794219be2443ef\\res\\layout\\notification_template_icon_group.xml"
     },
     {
         "merged": "D:\\Fruit\\gradleBuild\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",

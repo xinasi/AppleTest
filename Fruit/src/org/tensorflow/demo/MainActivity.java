@@ -5,21 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.app.Dialog;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.app.AlertDialog.Builder;
-import android.R.mipmap;
-
+import org.tensorflow.demo.R; // Explicit import needed for internal Google builds.
 
 public class MainActivity extends Activity {
-    private TextView txtV;
-    private Button btn_main;
-    private Button btn_classify;
-    private Button btn_pedia;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,18 +69,14 @@ public class MainActivity extends Activity {
                     intent.setClass(MainActivity.this,ClassifierActivity.class);
                     startActivity(intent);
                 }
-                else {
-                    //補水果種類切換程式碼
+                else if (items[which] == "水果種類"){
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this,TypeActivity.class);
+                    startActivity(intent);
                 }
 
             }
         });
         return builder.create();
     }
-
-
-
-/*
-
-*/
 }

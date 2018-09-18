@@ -16,6 +16,7 @@
 
 package org.tensorflow.demo;
 
+import android.app.AlertDialog;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
@@ -23,12 +24,9 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.media.ImageReader.OnImageAvailableListener;
-import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Size;
 import android.util.TypedValue;
-import android.view.Display;
-import android.view.Surface;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
@@ -38,6 +36,8 @@ import org.tensorflow.demo.OverlayView.DrawCallback;
 import org.tensorflow.demo.env.BorderedText;
 import org.tensorflow.demo.env.ImageUtils;
 import org.tensorflow.demo.env.Logger;
+import android.content.DialogInterface;
+import android.app.AlertDialog.Builder;
 import org.tensorflow.demo.R; // Explicit import needed for internal Google builds.
 
 public class ClassifierActivity extends CameraActivity implements OnImageAvailableListener {
@@ -69,7 +69,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   // --input_node_names="Mul" \
   // --output_node_names="final_result" \
   // --input_binary=true
-  private static final int NUM_CLASSES = 3;
+  private static final int NUM_CLASSES = 2;
   private static final int INPUT_SIZE = 224;
   private static final int IMAGE_MEAN = 128;
   private static final float IMAGE_STD = 128;
@@ -90,30 +90,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   private Classifier classifier;
   private Matrix frameToCropTransform;
   private Matrix cropToFrameTransform;
-  //private Button btn;
-
-
   private BorderedText borderedText;
-
-  @Override
-  protected void onHello () {
-
-    setContentView(R.layout.camera_connection_fragment);
-
-    //Button btn = (Button)findViewById(R.id.btn);
-    //btn.setOnClickListener(btnListner);
-  }
-  //9/11 新增按鈕 測試失敗
-  /*
-  private Button.OnClickListener btnListner =
-          new Button.OnClickListener() {
-            public void onClick(View v) {
-              Intent intent = new Intent();
-              intent.setClass(ClassifierActivity.this,PlaceActivity.class);
-              startActivity(intent);
-            }
-          };
-*/
 
   @Override
   protected int getLayoutId() {
@@ -199,7 +176,71 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
                 readyForNextImage();
               }
             });
+    //取得辨識按鈕的id
+    Button btn_c2c = (Button)findViewById(R.id.btn_classify2classify);
+    final AlertDialog mutiItemDialog = getMutiItemDialog(new String[]{"蘋果產地","水果甜度","水果種類"});
+      btn_c2c.setOnClickListener(new Button.OnClickListener(){
+      @Override
+      public void onClick(View view){
+        //顯示對話框
+        mutiItemDialog.show();
+      }
+    });
+
+    //取得首頁按鈕的id
+    Button btn_c2m = (Button)findViewById(R.id.btn_classify2main);
+    btn_c2m.setOnClickListener(btn_c2mListner);
+
+    //取得百科按鈕的id
+    Button btn_c2p = (Button)findViewById(R.id.btn_classify2peida);
+    btn_c2p.setOnClickListener(btn_c2pListner);
   }
+
+  public AlertDialog getMutiItemDialog(final String[] items) {
+    Builder builder = new Builder(this);
+    //設定對話框內的項目
+    builder.setItems(items, new DialogInterface.OnClickListener(){
+      @Override
+      public void onClick(DialogInterface dialog,int which){
+        //當使用者點選對話框時，切換不同頁面
+        if (items[which] == "蘋果產地") {
+          Intent intent = new Intent();
+          intent.setClass(ClassifierActivity.this,PlaceActivity.class);
+          startActivity(intent);
+        }
+        else if (items[which] == "水果甜度") {
+          Intent intent = new Intent();
+          intent.setClass(ClassifierActivity.this,ClassifierActivity.class);
+          startActivity(intent);
+        }
+        else if (items[which] == "水果種類"){
+          Intent intent = new Intent();
+          intent.setClass(ClassifierActivity.this,TypeActivity.class);
+          startActivity(intent);
+        }
+
+      }
+    });
+    return builder.create();
+  }
+  //回到首頁
+  private Button.OnClickListener btn_c2mListner =
+          new Button.OnClickListener() {
+            public void onClick(View v) {
+              Intent m_intent = new Intent();
+              m_intent.setClass(ClassifierActivity.this,MainActivity.class);
+              startActivity(m_intent);
+            }
+          };
+  //回到百科
+  private Button.OnClickListener btn_c2pListner =
+          new Button.OnClickListener() {
+            public void onClick(View v) {
+              Intent intent = new Intent();
+              intent.setClass(ClassifierActivity.this,LibraryHome.class);
+              startActivity(intent);
+            }
+          };
 
   @Override
   public void onSetDebug(boolean debug) {

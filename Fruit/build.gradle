@@ -63,7 +63,7 @@ android {
     if (nativeBuildSystem == 'cmake') {
         defaultConfig {
             applicationId = 'org.tensorflow.demo'
-            minSdkVersion 19
+            minSdkVersion 21
             targetSdkVersion 27
             ndk {
                 abiFilters "${cpuType}"

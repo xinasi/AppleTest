@@ -99,7 +99,6 @@
         android:id="@+id/btn_main"
         android:layout_width="100dp"
         android:layout_height="100dp"
-
         android:background="@mipmap/btn_main"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
