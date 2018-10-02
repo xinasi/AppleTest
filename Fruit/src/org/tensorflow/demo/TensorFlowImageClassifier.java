@@ -22,6 +22,7 @@ import android.util.Log;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -166,11 +167,18 @@ public class TensorFlowImageClassifier implements Classifier {
                 return Float.compare(rhs.getConfidence(), lhs.getConfidence());
               }
             });
+
     for (int i = 0; i < outputs.length; ++i) {
       if (outputs[i] > THRESHOLD) {
+          String t,ans;
+        //使用BigDecimal達成小數點處理
+        BigDecimal b = new BigDecimal(outputs[i]);
+        //轉成小數點第二位
+        double f1 = b.setScale(2,   BigDecimal.ROUND_HALF_UP).doubleValue();
         pq.add(
             new Recognition(
-                "" + i, labels.size() > i ? labels.get(i) : "unknown", outputs[i], null));
+                //記得用(float)轉回浮點數型態
+                "" + i, labels.size() > i ? labels.get(i) : "unknown", (float) f1, null));
       }
     }
     final ArrayList<Recognition> recognitions = new ArrayList<Recognition>();

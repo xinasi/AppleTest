@@ -4,7 +4,7 @@
             "outputFile": "D:\\Fruit\\gradleBuild\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rIN\\values-en-rIN.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ee5e06b655e8ca1c6dca6af90c4e37e4\\res\\values-en-rIN\\values-en-rIN.xml",
+                    "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\87c23e391d344ab0adb8eb9810e4cf15\\res\\values-en-rIN\\values-en-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\fceb0a90e7be619c36794219be2443ef\\res\\values-en-rIN\\values-en-rIN.xml",
+                    "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\825ab83933fef978dfe5d14d8892bfc8\\res\\values-en-rIN\\values-en-rIN.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

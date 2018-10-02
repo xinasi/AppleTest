@@ -4,7 +4,7 @@
             "outputFile": "D:\\Fruit\\gradleBuild\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ee5e06b655e8ca1c6dca6af90c4e37e4\\res\\values-v17\\values-v17.xml",
+                    "source": "C:\\Users\\william\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\87c23e391d344ab0adb8eb9810e4cf15\\res\\values-v17\\values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,26,29,32,35,39,42,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",

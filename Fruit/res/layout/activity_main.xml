@@ -4,120 +4,116 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/bg_main"
+    android:background="@mipmap/imageview_bg"
     tools:context=".MainActivity"
     tools:layout_editor_absoluteY="25dp">
 
-    <ImageButton
-        android:id="@+id/applebtn"
-        android:layout_width="119dp"
-        android:layout_height="91dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#00000000"
-        android:scaleType="fitXY"
-        android:src="@mipmap/apple"
+    <android.support.constraint.Guideline
+        android:id="@+id/gl_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+    <ImageView
+        android:id="@+id/imgv_roulette"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@mipmap/roulette"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickButtonRotation"
+        android:text="開始"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:background="@drawable/btn_start_event"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgv_roulette"></Button>
+
+    <ImageView
+        android:id="@+id/imgv_pointer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/pointer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgv_roulette"></ImageView>
+
+    <TextView
+        android:id="@+id/txv_timeview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="來抽獎吧!! "
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/imgv_roulette"
+        app:layout_constraintRight_toLeftOf="@id/gl_center"></TextView>
+
+    <TextView
+        android:id="@+id/txv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/imgv_roulette"
+        app:layout_constraintLeft_toRightOf="@id/gl_center"></TextView>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/gl_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <Button
+        android:id="@+id/btn_gift"
+        android:layout_width="80dp"
+        android:layout_height="70dp"
+        android:background="@mipmap/btn_gift"
+        app:layout_constraintTop_toBottomOf="@id/gl_main"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/pearbtn"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.334" />
+        app:layout_constraintVertical_bias="1.0" />
 
-    <ImageButton
-        android:id="@+id/guavabtn"
-        android:layout_width="103dp"
-        android:layout_height="137dp"
-        android:background="#00000000"
-        android:scaleType="fitXY"
-        android:src="@mipmap/gua"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/dfbtn"
-        app:layout_constraintTop_toBottomOf="@+id/applebtn"
-        app:layout_constraintVertical_bias="0.417" />
-
-    <ImageButton
-        android:id="@+id/kiwibtn"
-        android:layout_width="113dp"
-        android:layout_height="105dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#00000000"
-        android:scaleType="fitXY"
-        android:src="@mipmap/kiwi"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.549" />
-
-    <ImageButton
-        android:id="@+id/dfbtn"
-        android:layout_width="118dp"
-        android:layout_height="105dp"
-        android:background="#00000000"
-        android:scaleType="fitXY"
-        android:src="@mipmap/fire"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pearbtn"
-        app:layout_constraintVertical_bias="0.331" />
-
-    <ImageButton
-        android:id="@+id/pearbtn"
-        android:layout_width="84dp"
-        android:layout_height="80dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="10dp"
-        android:background="#00000000"
-        android:scaleType="fitXY"
-        android:src="@mipmap/pear"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.369" />
 
     <Button
         android:id="@+id/btn_classify"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="10dp"
+        android:layout_width="80dp"
+        android:layout_height="70dp"
         android:background="@mipmap/btn_classify"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/btn_main"
-        app:layout_constraintTop_toBottomOf="@+id/dfbtn"
+        app:layout_constraintEnd_toStartOf="@id/btn_main"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btn_main"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="70dp"
         android:background="@mipmap/btn_main"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kiwibtn"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/btn_pedia"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="28dp"
-        android:background="@mipmap/btn_pedia"
+        android:id="@+id/btn_library"
+        android:layout_width="80dp"
+        android:layout_height="70dp"
+        android:background="@mipmap/btn_library"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/btn_main"
-        app:layout_constraintTop_toBottomOf="@+id/guavabtn"
+        app:layout_constraintStart_toEndOf="@id/btn_main"
         app:layout_constraintVertical_bias="1.0" />
-
-
 
 
 </android.support.constraint.ConstraintLayout>

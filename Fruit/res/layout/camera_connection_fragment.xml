@@ -28,7 +28,8 @@
         android:id="@+id/results"
         android:layout_width="match_parent"
         android:layout_height="115dp"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:background="@mipmap/title_classify"/>
 
     <org.tensorflow.demo.OverlayView
         android:id="@+id/debug_overlay"
@@ -39,29 +40,26 @@
 
     <Button
         android:id="@+id/btn_classify2classify"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@mipmap/btn_classify"
+        android:layout_width="80dp"
+        android:layout_height="70dp"
         android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@id/btn_classify2main"/>
+        android:layout_toStartOf="@id/btn_classify2main"
+        android:background="@mipmap/btn_classify" />
 
     <Button
         android:id="@+id/btn_classify2main"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@mipmap/btn_main"
+        android:layout_width="80dp"
+        android:layout_height="70dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"  />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@mipmap/btn_main" />
 
     <Button
         android:id="@+id/btn_classify2peida"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@mipmap/btn_pedia"
+        android:layout_width="80dp"
+        android:layout_height="70dp"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@id/btn_classify2main"/>
-
-
-
-
+        android:layout_toEndOf="@id/btn_classify2main"
+        android:background="@mipmap/btn_library" />
 </RelativeLayout>

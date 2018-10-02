@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "335483891406",
+    "firebase_url": "https://fruit-t2938.firebaseio.com",
+    "project_id": "fruit-t2938",
+    "storage_bucket": "fruit-t2938.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335483891406:android:b01db18433589acd",
+        "android_client_info": {
+          "package_name": "org.tensorflow.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "335483891406-080j6fp49s41kq8tbfo98ognv0vf04bi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.tensorflow.demo",
+            "certificate_hash": "52af62ffb327f7ac778cc5440784cc49d7963793"
+          }
+        },
+        {
+          "client_id": "335483891406-e15s6ai60f4rft63sfmk6eja4dj0sgbj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1R_Cw27WnAwYbi6XK7TLhWtJ_RmCoaSU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "335483891406-e15s6ai60f4rft63sfmk6eja4dj0sgbj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

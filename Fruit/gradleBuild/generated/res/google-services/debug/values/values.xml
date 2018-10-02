@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">335483891406-e15s6ai60f4rft63sfmk6eja4dj0sgbj.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://fruit-t2938.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">335483891406</string>
+    <string name="google_api_key" translatable="false">AIzaSyA1R_Cw27WnAwYbi6XK7TLhWtJ_RmCoaSU</string>
+    <string name="google_app_id" translatable="false">1:335483891406:android:b01db18433589acd</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA1R_Cw27WnAwYbi6XK7TLhWtJ_RmCoaSU</string>
+    <string name="google_storage_bucket" translatable="false">fruit-t2938.appspot.com</string>
+    <string name="project_id" translatable="false">fruit-t2938</string>
+</resources>
