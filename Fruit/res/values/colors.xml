@@ -18,5 +18,14 @@
     <color name="control_background">#cc4285f4</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorRed">#ff3943</color>
+    <color name="colorRedDark">#801b20</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorPinkLight">#FFB7DD</color>
+    <color name="colorPink">#FF88C2</color>
+    <color name="colorGreenLight">#abffc0</color>
+    <color name="colorGreen">#247b37</color>
+    <color name="colorGreen1">#3eb959</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorDark">#000000</color>
 </resources>

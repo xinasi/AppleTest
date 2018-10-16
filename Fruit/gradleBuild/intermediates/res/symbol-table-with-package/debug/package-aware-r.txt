@@ -54,6 +54,7 @@ attr alertDialogTheme
 attr allowStacking
 attr alpha
 attr alphabeticModifiers
+attr ambientEnabled
 attr arrowHeadLength
 attr arrowShaftLength
 attr autoCompleteTextViewStyle
@@ -84,6 +85,13 @@ attr buttonStyle
 attr buttonStyleSmall
 attr buttonTint
 attr buttonTintMode
+attr cameraBearing
+attr cameraMaxZoomPreference
+attr cameraMinZoomPreference
+attr cameraTargetLat
+attr cameraTargetLng
+attr cameraTilt
+attr cameraZoom
 attr cardBackgroundColor
 attr cardCornerRadius
 attr cardElevation
@@ -181,6 +189,10 @@ attr initialActivityCount
 attr isLightTheme
 attr itemPadding
 attr keylines
+attr latLngBoundsNorthEastLatitude
+attr latLngBoundsNorthEastLongitude
+attr latLngBoundsSouthWestLatitude
+attr latLngBoundsSouthWestLongitude
 attr layout
 attr layoutManager
 attr layout_anchor
@@ -250,8 +262,10 @@ attr listPreferredItemHeightLarge
 attr listPreferredItemHeightSmall
 attr listPreferredItemPaddingLeft
 attr listPreferredItemPaddingRight
+attr liteMode
 attr logo
 attr logoDescription
+attr mapType
 attr maxButtonHeight
 attr measureWithLargestChild
 attr metaButtonBarButtonStyle
@@ -353,6 +367,14 @@ attr tooltipText
 attr track
 attr trackTint
 attr trackTintMode
+attr uiCompass
+attr uiMapToolbar
+attr uiRotateGestures
+attr uiScrollGestures
+attr uiTiltGestures
+attr uiZoomControls
+attr uiZoomGestures
+attr useViewLifecycle
 attr viewInflaterClass
 attr voiceIcon
 attr windowActionBar
@@ -365,6 +387,7 @@ attr windowFixedWidthMinor
 attr windowMinWidthMajor
 attr windowMinWidthMinor
 attr windowNoTitle
+attr zOrderOnTop
 bool abc_action_bar_embed_tabs
 bool abc_allow_stacked_button_bar
 bool abc_config_actionMenuItemAllCaps
@@ -412,8 +435,17 @@ color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
 color colorAccent
+color colorDark
+color colorGreen
+color colorGreen1
+color colorGreenLight
+color colorPink
+color colorPinkLight
 color colorPrimary
 color colorPrimaryDark
+color colorRed
+color colorRedDark
+color colorWhite
 color common_google_signin_btn_text_dark
 color common_google_signin_btn_text_dark_default
 color common_google_signin_btn_text_dark_disabled
@@ -685,6 +717,10 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable acid_thumb
 drawable border
+drawable btn_coupon_dialog
+drawable btn_coupon_dialog_lose
+drawable btn_end
+drawable btn_start
 drawable btn_start_event
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -706,6 +742,7 @@ drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
 drawable enough_thumb
+drawable fruiticon
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_action_info
@@ -775,18 +812,22 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btn_Coupon
+id btn_CouponAccept
+id btn_CouponAcceptLose
+id btn_Logout
 id btn_classify
 id btn_classify2classify
+id btn_classify2library
 id btn_classify2main
-id btn_classify2peida
-id btn_gift
 id btn_library
 id btn_library2classify
 id btn_library2library
 id btn_library2main
 id btn_main
-id btn_start
 id buttonPanel
+id buttonRegister
+id buttonSignin
 id cancel_action
 id center
 id center_horizontal
@@ -809,6 +850,8 @@ id dfbtn
 id dimensions
 id direct
 id disableHome
+id editTextEmail
+id editTextPassword
 id edit_query
 id end
 id end_padder
@@ -826,12 +869,17 @@ id groups
 id guavabtn
 id home
 id homeAsUp
+id hybrid
 id icon
 id icon_group
 id icon_only
 id ifRoom
 id image
 id imageView
+id imgb_gift
+id imgb_start
+id imgv_CouponResult
+id imgv_CouponResultLose
 id imgv_pointer
 id imgv_roulette
 id info
@@ -868,11 +916,14 @@ id rDescriptionTv
 id rImageView
 id rTitleTv
 id radio
+id rc_ImageView
+id rc_recyclerView
 id recyclerView
 id results
 id right
 id right_icon
 id right_side
+id satellite
 id screen
 id scrollIndicatorDown
 id scrollIndicatorUp
@@ -913,10 +964,14 @@ id switch_green
 id switch_red
 id tabMode
 id tag_transition_group
+id terrain
 id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
+id textView2
+id textViewSignin
+id textViewSignup
 id texture
 id time
 id title
@@ -924,7 +979,11 @@ id titleDividerNoCustom
 id title_template
 id top
 id topPanel
-id txv_time
+id txv_CouponMessage
+id txv_CouponMessageLose
+id txv_CouponTitle
+id txv_CouponTitleLose
+id txv_UserEmail
 id txv_timeview
 id uniform
 id up
@@ -972,9 +1031,13 @@ layout activity_check_view
 layout activity_gift
 layout activity_images_view
 layout activity_library_home
+layout activity_login
 layout activity_main
+layout activity_register
 layout camera_connection_fragment
 layout check_view
+layout coupon_dialog
+layout coupon_dialog_lose
 layout list_text_item
 layout notification_action
 layout notification_action_tombstone
@@ -991,6 +1054,8 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout roulette_coupon
+layout roulette_row
 layout row
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
@@ -1007,8 +1072,12 @@ mipmap btn_gift
 mipmap btn_library
 mipmap btn_main
 mipmap checkview
+mipmap cost1
+mipmap coupon_basket
+mipmap coupon_roulette
 mipmap fruiticon
 mipmap gua
+mipmap ic_launcher
 mipmap imageview_bg
 mipmap kiwi
 mipmap pear
@@ -1076,9 +1145,15 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
+string input_error_email
+string input_error_email_invalid
+string input_error_password
+string input_error_password_length
 string main_name
 string place_page
 string project_id
+string registration_lose
+string registration_success
 string request_permission
 string search_menu_title
 string select_classify
@@ -1474,6 +1549,7 @@ styleable LinearLayoutCompat android_gravity android_orientation android_baselin
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
 styleable LoadingImageView circleCrop imageAspectRatio imageAspectRatioAdjust
+styleable MapAttrs ambientEnabled cameraBearing cameraMaxZoomPreference cameraMinZoomPreference cameraTargetLat cameraTargetLng cameraTilt cameraZoom latLngBoundsNorthEastLatitude latLngBoundsNorthEastLongitude latLngBoundsSouthWestLatitude latLngBoundsSouthWestLongitude liteMode mapType uiCompass uiMapToolbar uiRotateGestures uiScrollGestures uiTiltGestures uiZoomControls uiZoomGestures useViewLifecycle zOrderOnTop
 styleable MenuGroup android_enabled android_id android_visible android_menuCategory android_orderInCategory android_checkableBehavior
 styleable MenuItem android_icon android_enabled android_id android_checked android_visible android_menuCategory android_orderInCategory android_title android_titleCondensed android_alphabeticShortcut android_numericShortcut android_checkable android_onClick actionLayout actionProviderClass actionViewClass alphabeticModifiers contentDescription iconTint iconTintMode numericModifiers showAsAction tooltipText
 styleable MenuView android_windowAnimationStyle android_itemTextAppearance android_horizontalDivider android_verticalDivider android_headerBackground android_itemBackground android_itemIconDisabledAlpha preserveIconSpacing subMenuArrow

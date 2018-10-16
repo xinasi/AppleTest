@@ -2,7 +2,7 @@
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
     <array name="classify_array">
         <item>水果種類</item>
-        <item>水果甜度</item>
+        <item>蘋果甜度</item>
         <item>蘋果產地</item>
     </array>
     <attr format="boolean" name="barrierAllowsGoneWidgets"/>
@@ -163,8 +163,17 @@
     <color name="cardview_shadow_end_color">#03000000</color>
     <color name="cardview_shadow_start_color">#37000000</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorDark">#000000</color>
+    <color name="colorGreen">#247b37</color>
+    <color name="colorGreen1">#3eb959</color>
+    <color name="colorGreenLight">#abffc0</color>
+    <color name="colorPink">#FF88C2</color>
+    <color name="colorPinkLight">#FFB7DD</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorRed">#ff3943</color>
+    <color name="colorRedDark">#801b20</color>
+    <color name="colorWhite">#ffffff</color>
     <color name="common_google_signin_btn_text_dark_default">@android:color/white</color>
     <color name="common_google_signin_btn_text_dark_disabled">#1F000000</color>
     <color name="common_google_signin_btn_text_dark_focused">@android:color/black</color>
@@ -400,6 +409,63 @@
 <attr format="float" name="imageAspectRatio"/>
 
 <attr format="boolean" name="circleCrop"/>
+</declare-styleable>
+    <declare-styleable name="MapAttrs"><attr name="mapType">
+<enum name="none" value="0"/>
+
+<enum name="normal" value="1"/>
+
+<enum name="satellite" value="2"/>
+
+<enum name="terrain" value="3"/>
+
+<enum name="hybrid" value="4"/>
+
+</attr>
+
+<attr format="float" name="cameraBearing"/>
+
+<attr format="float" name="cameraTargetLat"/>
+
+<attr format="float" name="cameraTargetLng"/>
+
+<attr format="float" name="cameraTilt"/>
+
+<attr format="float" name="cameraZoom"/>
+
+<attr format="boolean" name="liteMode"/>
+
+<attr format="boolean" name="uiCompass"/>
+
+<attr format="boolean" name="uiRotateGestures"/>
+
+<attr format="boolean" name="uiScrollGestures"/>
+
+<attr format="boolean" name="uiTiltGestures"/>
+
+<attr format="boolean" name="uiZoomControls"/>
+
+<attr format="boolean" name="uiZoomGestures"/>
+
+<attr format="boolean" name="useViewLifecycle"/>
+
+<attr format="boolean" name="zOrderOnTop"/>
+
+<attr format="boolean" name="uiMapToolbar"/>
+
+<attr format="boolean" name="ambientEnabled"/>
+
+<attr format="float" name="cameraMinZoomPreference"/>
+
+<attr format="float" name="cameraMaxZoomPreference"/>
+
+<attr format="float" name="latLngBoundsSouthWestLatitude"/>
+
+<attr format="float" name="latLngBoundsSouthWestLongitude"/>
+
+<attr format="float" name="latLngBoundsNorthEastLatitude"/>
+
+<attr format="float" name="latLngBoundsNorthEastLongitude"/>
 </declare-styleable>
     <declare-styleable name="MenuGroup"><attr name="android:id"/><attr name="android:menuCategory"/><attr name="android:orderInCategory"/><attr name="android:checkableBehavior"/><attr name="android:visible"/><attr name="android:enabled"/></declare-styleable>
     <declare-styleable name="MenuItem"><attr name="android:id"/><attr name="android:menuCategory"/><attr name="android:orderInCategory"/><attr name="android:title"/><attr name="android:titleCondensed"/><attr name="android:icon"/><attr name="android:alphabeticShortcut"/><attr name="alphabeticModifiers">
@@ -697,8 +763,8 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <string name="activity_name_classification">水果小幫手</string>
-    <string name="app_name">水果小幫手</string>
+    <string name="activity_name_classification">AI要即實</string>
+    <string name="app_name">AI要即實</string>
     <string name="camera_error">This device doesn\'t support Camera2 API.</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t work unless you enable Google Play services.</string>
@@ -728,9 +794,15 @@
     <string name="google_app_id" translatable="false">1:335483891406:android:b01db18433589acd</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA1R_Cw27WnAwYbi6XK7TLhWtJ_RmCoaSU</string>
     <string name="google_storage_bucket" translatable="false">fruit-t2938.appspot.com</string>
+    <string name="input_error_email">請輸入Email</string>
+    <string name="input_error_email_invalid">Email格式錯誤</string>
+    <string name="input_error_password">請輸入密碼</string>
+    <string name="input_error_password_length">密碼長度過短</string>
     <string name="main_name">水果</string>
     <string name="place_page">Place</string>
     <string name="project_id" translatable="false">fruit-t2938</string>
+    <string name="registration_lose">註冊失敗</string>
+    <string name="registration_success">註冊成功</string>
     <string name="request_permission">This sample needs camera permission.</string>
     <string name="search_menu_title">Search</string>
     <string name="select_classify">選擇辨識方式</string>

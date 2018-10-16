@@ -7,6 +7,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+/*
+    取得果籃有禮畫面物件
+    並顯示在畫面上
+*/
+
 
 public class ViewHolder extends RecyclerView.ViewHolder {
 

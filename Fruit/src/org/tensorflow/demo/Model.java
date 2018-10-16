@@ -3,7 +3,9 @@ package org.tensorflow.demo;
 public class Model {
     String title, image, description;
 
-    //constrctor
+/*
+    設定果籃有禮優惠券方法
+*/
     public Model() {}
 
     public String getTitle() {

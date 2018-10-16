@@ -168,7 +168,7 @@ public class TypeActivity extends CameraActivity implements ImageReader.OnImageA
                 });
         //取得辨識按鈕的id
         Button btn_c2c = (Button)findViewById(R.id.btn_classify2classify);
-        final AlertDialog mutiItemDialog = getMutiItemDialog(new String[]{"蘋果產地","水果甜度","水果種類"});
+        final AlertDialog mutiItemDialog = getMutiItemDialog(new String[]{"蘋果產地","蘋果甜度","水果種類"});
         btn_c2c.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -182,8 +182,8 @@ public class TypeActivity extends CameraActivity implements ImageReader.OnImageA
         btn_c2m.setOnClickListener(btn_c2mListner);
 
         //取得百科按鈕的id
-        Button btn_c2p = (Button)findViewById(R.id.btn_classify2peida);
-        btn_c2p.setOnClickListener(btn_c2pListner);
+        Button btn_c2l = (Button)findViewById(R.id.btn_classify2library);
+        btn_c2l.setOnClickListener(btn_c2lListner);
     }
 
     public AlertDialog getMutiItemDialog(final String[] items) {
@@ -198,7 +198,7 @@ public class TypeActivity extends CameraActivity implements ImageReader.OnImageA
                     intent.setClass(TypeActivity.this,PlaceActivity.class);
                     startActivity(intent);
                 }
-                else if (items[which] == "水果甜度") {
+                else if (items[which] == "蘋果甜度") {
                     Intent intent = new Intent();
                     intent.setClass(TypeActivity.this,ClassifierActivity.class);
                     startActivity(intent);
@@ -223,7 +223,7 @@ public class TypeActivity extends CameraActivity implements ImageReader.OnImageA
                 }
             };
     //回到百科
-    private Button.OnClickListener btn_c2pListner =
+    private Button.OnClickListener btn_c2lListner =
             new Button.OnClickListener() {
                 public void onClick(View v) {
                     Intent intent = new Intent();

@@ -46,7 +46,7 @@ public class LibraryHome extends AppCompatActivity {
         btn_l2l.setOnClickListener(btn_l2lListner);
         // 取得辨識id
         Button btn_l2c = (Button)findViewById(R.id.btn_library2classify);
-        final android.app.AlertDialog mutiItemDialog = getMutiItemDialog(new String[]{"蘋果產地","水果甜度","水果種類"});
+        final android.app.AlertDialog mutiItemDialog = getMutiItemDialog(new String[]{"蘋果產地","蘋果甜度","水果種類"});
         btn_l2c.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -560,7 +560,7 @@ public class LibraryHome extends AppCompatActivity {
                     intent.setClass(LibraryHome.this,PlaceActivity.class);
                     startActivity(intent);
                 }
-                else if (items[which] == "水果甜度") {
+                else if (items[which] == "蘋果甜度") {
                     Intent intent = new Intent();
                     intent.setClass(LibraryHome.this,ClassifierActivity.class);
                     startActivity(intent);

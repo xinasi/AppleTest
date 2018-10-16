@@ -73,14 +73,14 @@ public class TensorFlowImageClassifier implements Classifier {
    * @throws IOException
    */
   public static Classifier create(
-      AssetManager assetManager,
-      String modelFilename,
-      String labelFilename,
-      int inputSize,
-      int imageMean,
-      float imageStd,
-      String inputName,
-      String outputName) {
+          AssetManager assetManager,
+          String modelFilename,
+          String labelFilename,
+          int inputSize,
+          int imageMean,
+          float imageStd,
+          String inputName,
+          String outputName) {
     TensorFlowImageClassifier c = new TensorFlowImageClassifier();
     c.inputName = inputName;
     c.outputName = outputName;
@@ -158,27 +158,27 @@ public class TensorFlowImageClassifier implements Classifier {
 
     // Find the best classifications.
     PriorityQueue<Recognition> pq =
-        new PriorityQueue<Recognition>(
-            3,
-            new Comparator<Recognition>() {
-              @Override
-              public int compare(Recognition lhs, Recognition rhs) {
-                // Intentionally reversed to put high confidence at the head of the queue.
-                return Float.compare(rhs.getConfidence(), lhs.getConfidence());
-              }
-            });
+            new PriorityQueue<Recognition>(
+                    3,
+                    new Comparator<Recognition>() {
+                      @Override
+                      public int compare(Recognition lhs, Recognition rhs) {
+                        // Intentionally reversed to put high confidence at the head of the queue.
+                        return Float.compare(rhs.getConfidence(), lhs.getConfidence());
+                      }
+                    });
 
     for (int i = 0; i < outputs.length; ++i) {
       if (outputs[i] > THRESHOLD) {
-          String t,ans;
+        String t,ans;
         //使用BigDecimal達成小數點處理
         BigDecimal b = new BigDecimal(outputs[i]);
         //轉成小數點第二位
         double f1 = b.setScale(2,   BigDecimal.ROUND_HALF_UP).doubleValue();
         pq.add(
-            new Recognition(
-                //記得用(float)轉回浮點數型態
-                "" + i, labels.size() > i ? labels.get(i) : "unknown", (float) f1, null));
+                new Recognition(
+                        //記得用(float)轉回浮點數型態
+                        "" + i, labels.size() > i ? labels.get(i) : "unknown", (float) f1, null));
       }
     }
     final ArrayList<Recognition> recognitions = new ArrayList<Recognition>();

@@ -2,7 +2,7 @@
 <resources>
     <array name="classify_array">
         <item>水果種類</item>
-        <item>水果甜度</item>
+        <item>蘋果甜度</item>
         <item>蘋果產地</item>
     </array>
 </resources>

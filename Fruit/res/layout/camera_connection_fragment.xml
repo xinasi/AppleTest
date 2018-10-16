@@ -42,24 +42,23 @@
         android:id="@+id/btn_classify2classify"
         android:layout_width="80dp"
         android:layout_height="70dp"
-        android:layout_alignParentBottom="true"
+        android:background="@mipmap/btn_classify"
         android:layout_toStartOf="@id/btn_classify2main"
-        android:background="@mipmap/btn_classify" />
+        android:layout_alignParentBottom="true"/>
 
     <Button
         android:id="@+id/btn_classify2main"
         android:layout_width="80dp"
         android:layout_height="70dp"
-        android:layout_alignParentBottom="true"
+        android:background="@mipmap/btn_main"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@mipmap/btn_main" />
+        android:layout_alignParentBottom="true"/>
 
     <Button
-        android:id="@+id/btn_classify2peida"
+        android:id="@+id/btn_classify2library"
         android:layout_width="80dp"
         android:layout_height="70dp"
-        android:layout_alignParentBottom="true"
+        android:background="@mipmap/btn_library"
         android:layout_toEndOf="@id/btn_classify2main"
-        android:background="@mipmap/btn_library" />
+        android:layout_alignParentBottom="true"/>
 </RelativeLayout>

@@ -17,12 +17,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="org.tensorflow.demo">
 
+    <supports-screens
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="true"
+        android:anyDensity="true" />
+
     <!--<uses-sdk android:targetSdkVersion="27" />-->
 
     <uses-permission android:name="android.permission.CAMERA" />
 
-    <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -35,9 +51,10 @@
         android:debuggable="true"
         android:icon="@mipmap/fruiticon"
         android:label="@string/app_name"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        tools:ignore="HardcodedDebugMode,MissingTvBanner">
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:label="@string/activity_name_classification"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -47,6 +64,7 @@
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"/>
         <activity android:name=".ClassifierActivity" />
         <activity android:name=".PlaceActivity" />
         <activity android:name=".TypeActivity" />
@@ -54,6 +72,8 @@
         <activity android:name=".CheckView" />
         <activity android:name=".ImagesView" />
         <activity android:name=".GiftActivity"/>
+        <activity android:name=".RouletteCouponActivity"/>
+        <activity android:name=".RegisterActivity"/>
     </application>
 
 </manifest>

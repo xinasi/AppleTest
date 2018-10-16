@@ -15,6 +15,8 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
+import android.widget.ImageButton;
+
 import java.util.List;
 import java.util.Vector;
 import org.tensorflow.demo.OverlayView.DrawCallback;
@@ -164,7 +166,7 @@ public class PlaceActivity extends CameraActivity implements OnImageAvailableLis
                 });
         //取得辨識按鈕的id
         Button btn_c2c = (Button)findViewById(R.id.btn_classify2classify);
-        final AlertDialog mutiItemDialog = getMutiItemDialog(new String[]{"蘋果產地","水果甜度","水果種類"});
+        final AlertDialog mutiItemDialog = getMutiItemDialog(new String[]{"蘋果產地","蘋果甜度","水果種類"});
         btn_c2c.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -178,8 +180,8 @@ public class PlaceActivity extends CameraActivity implements OnImageAvailableLis
         btn_c2m.setOnClickListener(btn_c2mListner);
 
         //取得百科按鈕的id
-        Button btn_c2p = (Button)findViewById(R.id.btn_classify2peida);
-        btn_c2p.setOnClickListener(btn_c2pListner);
+        Button btn_c2l = (Button)findViewById(R.id.btn_classify2library);
+        btn_c2l.setOnClickListener(btn_c2lListner);
     }
 
     public AlertDialog getMutiItemDialog(final String[] items) {
@@ -194,7 +196,7 @@ public class PlaceActivity extends CameraActivity implements OnImageAvailableLis
                     intent.setClass(PlaceActivity.this,PlaceActivity.class);
                     startActivity(intent);
                 }
-                else if (items[which] == "水果甜度") {
+                else if (items[which] == "蘋果甜度") {
                     Intent intent = new Intent();
                     intent.setClass(PlaceActivity.this,ClassifierActivity.class);
                     startActivity(intent);
@@ -219,7 +221,7 @@ public class PlaceActivity extends CameraActivity implements OnImageAvailableLis
                 }
             };
     //回到百科
-    private Button.OnClickListener btn_c2pListner =
+    private Button.OnClickListener btn_c2lListner =
             new Button.OnClickListener() {
                 public void onClick(View v) {
                     Intent intent = new Intent();

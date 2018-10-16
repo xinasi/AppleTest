@@ -22,4 +22,10 @@
     <string name="place_page">Place</string>
     <string name="description">description</string>
     <string name="select_classify">選擇辨識方式</string>
+    <string name="input_error_email">請輸入Email</string>
+    <string name="input_error_email_invalid">Email格式錯誤</string>
+    <string name="input_error_password">請輸入密碼</string>
+    <string name="input_error_password_length">密碼長度過短</string>
+    <string name="registration_success">註冊成功</string>
+    <string name="registration_lose">註冊失敗</string>
 </resources>
