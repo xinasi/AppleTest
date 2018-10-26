@@ -21,6 +21,7 @@
     <string name="sweet_page">Sweet</string>
     <string name="place_page">Place</string>
     <string name="description">description</string>
+    <string name="signin">登入</string>
     <string name="select_classify">選擇辨識方式</string>
     <string name="input_error_email">請輸入Email</string>
     <string name="input_error_email_invalid">Email格式錯誤</string>

@@ -21,8 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="#FFFFFF"
-        >
+        android:background="#FFFFFF">
 
         <TextView
             android:id="@+id/textView2"
@@ -35,37 +34,68 @@
             android:layout_margin="15dp"/>
 
         <EditText
-        android:layout_margin="15dp"
-        android:id="@+id/editTextEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Eneter your email"
-        android:inputType="textEmailAddress"/>
+            android:layout_margin="15dp"
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="請輸入Email"
+            android:inputType="textEmailAddress"/>
 
         <EditText
-        android:layout_margin="15dp"
-        android:id="@+id/editTextPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Eneter your password"
-        android:inputType="textPassword"/>
+            android:layout_margin="15dp"
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="請輸入密碼"
+            android:inputType="textPassword"/>
 
         <Button
-        android:layout_margin="15dp"
-        android:id="@+id/buttonSignin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SIGN IN">
-        </Button>
+            android:layout_margin="15dp"
+            android:id="@+id/btn_SignIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/signin"
+            android:textAllCaps="false"/>
 
         <TextView
             android:layout_margin="15dp"
-        android:id="@+id/textViewSignup"
-        android:text="Not have an account?  Signup Here"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center">
+            android:id="@+id/textViewSignup"
+            android:text="建立帳戶"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center">
         </TextView>
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/btn_GoogleSignIn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text=""
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="#000"
+            />
+
+        <TextView
+            android:id="@+id/textViewEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/textViewName"
+            android:text=""
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="#000"
+            />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -1,4 +1,4 @@
-org.tensorflow.demo
+com.cyut.fruit
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -170,6 +170,7 @@ attr fontProviderFetchTimeout
 attr fontProviderPackage
 attr fontProviderQuery
 attr fontStyle
+attr fontVariationSettings
 attr fontWeight
 attr gapBetweenBars
 attr goIcon
@@ -367,6 +368,7 @@ attr tooltipText
 attr track
 attr trackTint
 attr trackTintMode
+attr ttcIndex
 attr uiCompass
 attr uiMapToolbar
 attr uiRotateGestures
@@ -587,6 +589,8 @@ dimen compat_button_inset_vertical_material
 dimen compat_button_padding_horizontal_material
 dimen compat_button_padding_vertical_material
 dimen compat_control_corner_material
+dimen compat_notification_large_icon_max_height
+dimen compat_notification_large_icon_max_width
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
 dimen fastscroll_default_thickness
@@ -623,6 +627,10 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen subtitle_corner_radius
+dimen subtitle_outline_width
+dimen subtitle_shadow_offset
+dimen subtitle_shadow_radius
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -815,7 +823,9 @@ id bottom
 id btn_Coupon
 id btn_CouponAccept
 id btn_CouponAcceptLose
+id btn_GoogleSignIn
 id btn_Logout
+id btn_SignIn
 id btn_classify
 id btn_classify2classify
 id btn_classify2library
@@ -827,7 +837,6 @@ id btn_library2main
 id btn_main
 id buttonPanel
 id buttonRegister
-id buttonSignin
 id cancel_action
 id center
 id center_horizontal
@@ -964,12 +973,16 @@ id switch_green
 id switch_red
 id tabMode
 id tag_transition_group
+id tag_unhandled_key_event_manager
+id tag_unhandled_key_listeners
 id terrain
 id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textView2
+id textViewEmail
+id textViewName
 id textViewSignin
 id textViewSignup
 id texture
@@ -1157,6 +1170,7 @@ string registration_success
 string request_permission
 string search_menu_title
 string select_classify
+string signin
 string status_bar_notification_info_overflow
 string sweet_page
 style AlertDialog_AppCompat
@@ -1543,7 +1557,9 @@ styleable CoordinatorLayout keylines statusBarBackground
 styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline
 styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color drawableSize gapBetweenBars spinBars thickness
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery
-styleable FontFamilyFont android_font android_fontWeight android_fontStyle font fontStyle fontWeight
+styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
+styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
+styleable GradientColorItem android_color android_offset
 styleable LinearConstraintLayout android_orientation
 styleable LinearLayoutCompat android_gravity android_orientation android_baselineAligned android_baselineAlignedChildIndex android_weightSum divider dividerPadding measureWithLargestChild showDividers
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight

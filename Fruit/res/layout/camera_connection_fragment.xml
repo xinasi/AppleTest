@@ -18,20 +18,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <org.tensorflow.demo.AutoFitTextureView
+    <com.cyut.fruit.AutoFitTextureView
         android:id="@+id/texture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true" />
 
-    <org.tensorflow.demo.RecognitionScoreView
+    <com.cyut.fruit.RecognitionScoreView
         android:id="@+id/results"
         android:layout_width="match_parent"
         android:layout_height="115dp"
         android:layout_alignParentTop="true"
         android:background="@mipmap/title_classify"/>
 
-    <org.tensorflow.demo.OverlayView
+    <com.cyut.fruit.OverlayView
         android:id="@+id/debug_overlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
