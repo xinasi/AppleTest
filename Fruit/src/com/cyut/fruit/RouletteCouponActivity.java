@@ -1,26 +1,26 @@
 package com.cyut.fruit;
 
+import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ScaleDrawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import com.cyut.fruit.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /*
 轉盤優惠券主程式:
@@ -32,6 +32,9 @@ public class RouletteCouponActivity extends AppCompatActivity {
     DatabaseReference cRef;
     FirebaseAuth firebaseAuth;
     private float scaleHeight, scaleWidth;
+    Object obj;
+    private List<String> list = new ArrayList<>();
+    FirebaseRecyclerAdapter firebaseRecyclerAdapter;
 
 
 
@@ -51,7 +54,7 @@ public class RouletteCouponActivity extends AppCompatActivity {
 
 
         rFirebaseDatabase = FirebaseDatabase.getInstance();
-       String uid = (String) firebaseAuth.getInstance().getCurrentUser().getUid();
+        String uid = (String) firebaseAuth.getInstance().getCurrentUser().getUid();
         cRef = rFirebaseDatabase.getReference().child("Data/User").child(uid).child("url");
 
     }
@@ -60,74 +63,43 @@ public class RouletteCouponActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        FirebaseRecyclerAdapter<RouletteCoupon, RouletteViewHolder> firebaseRecyclerAdapter =
-                new FirebaseRecyclerAdapter<RouletteCoupon, RouletteViewHolder>(
-                        RouletteCoupon.class,
-                        R.layout.roulette_row,
-                        RouletteViewHolder.class,
-                        cRef
-                ){
+        firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<RouletteCoupon, RouletteViewHolder>(
+                RouletteCoupon.class,
+                R.layout.roulette_row,
+                RouletteViewHolder.class,
+                cRef
+        ) {
+            @Override
+            protected void populateViewHolder(RouletteViewHolder rouletteviewHolder, RouletteCoupon rouletteCoupon, final int position) {
+                rouletteviewHolder.setDetails(getApplicationContext(), rouletteCoupon.getImage());
+
+                rouletteviewHolder.rView.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    protected void populateViewHolder(RouletteViewHolder rouletteviewHolder, RouletteCoupon rouletteCoupon, int position) {
-                        rouletteviewHolder.setDetails(getApplicationContext(), rouletteCoupon.getImage());
-                    }
-                    // 10/24
-                    @Override
-                    public RouletteViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-                        final RouletteViewHolder viewHolder = super.onCreateViewHolder(parent, viewType);
-                        viewHolder.setOnClickListener(new RouletteViewHolder.ClickListener() {
-                            @Override
-                            public void onItemClick(View view, final int position) {
-                                DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-                                cRef.addValueEventListener(new ValueEventListener() {
+                    public void onClick(View v) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(RouletteCouponActivity.this);
+                        builder.setMessage("是否兌換此張優惠券？").setCancelable(false)
+                                .setPositiveButton("是", new DialogInterface.OnClickListener() {
                                     @Override
-                                    public void onDataChange(DataSnapshot snapshot) {
-                                        for (DataSnapshot objSnapshot: snapshot.getChildren()) {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        firebaseRecyclerAdapter.getRef(position).removeValue();
+                                        firebaseRecyclerAdapter.notifyDataSetChanged();
 
-                                        }
-                                        //Toast.makeText(RouletteCouponActivity.this, "Click!! " + key, Toast.LENGTH_SHORT).show();
-                                        /*
-                                        for (DataSnapshot objSnapshot: snapshot.getChildren()) {
-
-                                        }
-                                        */
                                     }
+                                })
+                                .setNegativeButton("否", new DialogInterface.OnClickListener() {
                                     @Override
-                                    public void onCancelled(DatabaseError firebaseError) {
-                                        Log.e("Read failed", firebaseError.getMessage());
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.cancel();
                                     }
                                 });
-
-                            }
-
-                            @Override
-                            public void onItemLongClick(View view, int position) {
-                                Toast.makeText(RouletteCouponActivity.this, "Long Click!! ", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                        return viewHolder;
+                        AlertDialog dialog = builder.create();
+                        dialog.setTitle("兌換優惠");
+                        dialog.show();
                     }
-                };
+                });
+            }
+        };
         //set adapter to recyclerview
         rc_RecyclerView.setAdapter(firebaseRecyclerAdapter);
-
-
-
-
     }
-
-
-
-
-/*
-    public void onDeleteClick(int position) {
-        String uid = (String) firebaseAuth.getInstance().getCurrentUser().getUid();
-        Coupon selectedItem = couponKeys.get(position);
-        String selectedKey = selectedItem.getKey();
-        rFirebaseDatabase.getReference().child("Data/User").child(uid).child(selectedKey).removeValue();
-
-
-    }
-*/
-
 }

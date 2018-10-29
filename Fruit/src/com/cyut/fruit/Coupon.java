@@ -1,7 +1,7 @@
 package com.cyut.fruit;
 
 public class Coupon {
-    private String image;
+    String image;
 
     public Coupon() {}
 
@@ -16,5 +16,4 @@ public class Coupon {
     public void setImage(String image) {
         this.image = image;
     }
-
 }

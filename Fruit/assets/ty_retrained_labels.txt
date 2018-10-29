@@ -1,5 +1,8 @@
 apple
+banana
+grape
 guava
 kiwi
 pear
 pitaya
+tangerine

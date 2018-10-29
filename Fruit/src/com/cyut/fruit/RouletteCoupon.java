@@ -1,7 +1,7 @@
 package com.cyut.fruit;
 
 public class RouletteCoupon {
-    private String image;
+    String image;
 /*
 轉盤優惠券:
     設定轉盤優惠券方法
@@ -19,7 +19,5 @@ public class RouletteCoupon {
     public void setImage(String image) {
         this.image = image;
     }
-
-
 
 }

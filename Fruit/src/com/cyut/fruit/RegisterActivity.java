@@ -2,9 +2,9 @@ package com.cyut.fruit;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -91,8 +91,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         if (task.isSuccessful()) {
 
                             User user = new User(
-                                    email,
-                                    password
+                                    email
                             );
 
                             FirebaseDatabase.getInstance().getReference("Data/User")

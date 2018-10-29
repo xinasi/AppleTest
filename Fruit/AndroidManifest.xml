@@ -54,7 +54,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="HardcodedDebugMode,MissingTvBanner">
         <activity
-            android:name=".LoginActivity"
+            android:name="com.cyut.fruit.LoginActivity"
             android:label="@string/activity_name_classification"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -64,16 +64,16 @@
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".ClassifierActivity" />
-        <activity android:name=".PlaceActivity" />
-        <activity android:name=".TypeActivity" />
-        <activity android:name=".LibraryHome" />
-        <activity android:name=".CheckView" />
-        <activity android:name=".ImagesView" />
-        <activity android:name=".GiftActivity"/>
-        <activity android:name=".RouletteCouponActivity"/>
-        <activity android:name=".RegisterActivity"/>
+        <activity android:name="com.cyut.fruit.MainActivity"/>
+        <activity android:name="com.cyut.fruit.ClassifierActivity" />
+        <activity android:name="com.cyut.fruit.PlaceActivity" />
+        <activity android:name="com.cyut.fruit.TypeActivity" />
+        <activity android:name="com.cyut.fruit.LibraryHome" />
+        <activity android:name="com.cyut.fruit.CheckView" />
+        <activity android:name="com.cyut.fruit.ImagesView" />
+        <activity android:name="com.cyut.fruit.GiftActivity"/>
+        <activity android:name="com.cyut.fruit.RouletteCouponActivity"/>
+        <activity android:name="com.cyut.fruit.RegisterActivity"/>
     </application>
 
 </manifest>

@@ -1,115 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/bg_pedia"
-    tools:context=".LibraryHome"
-    tools:layout_editor_absoluteY="25dp">
+    tools:context="com.cyut.fruit.LibraryHome"
+    android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/applebtn"
-        android:layout_width="119dp"
-        android:layout_height="91dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#00000000"
-        android:scaleType="fitXY"
-        android:src="@mipmap/apple"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/pearbtn"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.334" />
 
-    <ImageButton
-        android:id="@+id/guavabtn"
-        android:layout_width="103dp"
-        android:layout_height="137dp"
-        android:background="#00000000"
-        android:scaleType="fitXY"
-        android:src="@mipmap/gua"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/dfbtn"
-        app:layout_constraintTop_toBottomOf="@+id/applebtn"
-        app:layout_constraintVertical_bias="0.417" />
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/imageview_bg3"
+        tools:context="com.cyut.fruit.LibraryHome"
+        tools:layout_editor_absoluteY="25dp">
 
-    <ImageButton
-        android:id="@+id/kiwibtn"
-        android:layout_width="113dp"
-        android:layout_height="105dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#00000000"
-        android:scaleType="fitXY"
-        android:src="@mipmap/kiwi"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.549" />
+        <ImageButton
+            android:id="@+id/backpage"
+            android:layout_width="15dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@mipmap/back6"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/dfbtn"
-        android:layout_width="118dp"
-        android:layout_height="105dp"
-        android:background="#00000000"
-        android:scaleType="fitXY"
-        android:src="@mipmap/pitaya"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pearbtn"
-        app:layout_constraintVertical_bias="0.331" />
+        <ImageButton
+            android:id="@+id/applebtn"
+            android:layout_width="138dp"
+            android:layout_height="104dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            android:src="@mipmap/apple"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.572" />
 
-    <ImageButton
-        android:id="@+id/pearbtn"
-        android:layout_width="84dp"
-        android:layout_height="80dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="10dp"
-        android:background="#00000000"
-        android:scaleType="fitXY"
-        android:src="@mipmap/pear"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.369" />
+        <ImageButton
+            android:id="@+id/guavabtn"
+            android:layout_width="103dp"
+            android:layout_height="137dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            android:src="@mipmap/guava"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/applebtn"
+            app:layout_constraintVertical_bias="0.323" />
 
-    <Button
-        android:id="@+id/btn_library2classify"
-        android:layout_width="80dp"
-        android:layout_height="70dp"
-        android:background="@mipmap/btn_classify"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btn_library2main"
-        app:layout_constraintVertical_bias="1.0" />
+        <ImageButton
+            android:id="@+id/kiwibtn"
+            android:layout_width="92dp"
+            android:layout_height="87dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="8dp"
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            android:src="@mipmap/kiwi"
+            app:layout_constraintBottom_toTopOf="@+id/applebtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.546" />
 
-    <Button
-        android:id="@+id/btn_library2main"
-        android:layout_width="80dp"
-        android:layout_height="70dp"
-        android:background="@mipmap/btn_main"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        <ImageButton
+            android:id="@+id/dfbtn"
+            android:layout_width="118dp"
+            android:layout_height="105dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            android:src="@mipmap/pitaya"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guavabtn"
+            app:layout_constraintHorizontal_bias="0.131"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/applebtn"
+            app:layout_constraintVertical_bias="0.477" />
 
-    <Button
-        android:id="@+id/btn_library2library"
-        android:layout_width="80dp"
-        android:layout_height="70dp"
-        android:background="@mipmap/btn_library"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btn_library2main"
-        app:layout_constraintVertical_bias="1.0" />
+        <ImageButton
+            android:id="@+id/pearbtn"
+            android:layout_width="84dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            android:src="@mipmap/pear"
+            app:layout_constraintBottom_toTopOf="@+id/applebtn"
+            app:layout_constraintEnd_toStartOf="@+id/kiwibtn"
+            app:layout_constraintHorizontal_bias="0.198"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.648" />
+    </android.support.constraint.ConstraintLayout>>
 
-</android.support.constraint.ConstraintLayout>
+
+
+
+</LinearLayout>

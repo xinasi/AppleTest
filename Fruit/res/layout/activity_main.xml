@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/imageview_bg"
-    tools:context=".MainActivity"
+    android:background="@mipmap/imageview_bg3"
+    tools:context="com.cyut.fruit.MainActivity"
     tools:layout_editor_absoluteY="25dp">
     <!-- 上方水平基準線 -->
     <android.support.constraint.Guideline
@@ -14,25 +14,39 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.22" />
+
     <!-- 歡迎使用者 -->
-    <TextView
-        android:id="@+id/txv_UserEmail"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:text="@null"
-        android:textColor="@color/colorGreenLight"
-        app:layout_constraintBottom_toTopOf="@id/gl_main"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="5dp"/>
-    <!-- 登出按鈕 -->
-    <Button
-        android:id="@+id/btn_Logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="登出"
-        android:layout_margin="15dp"
-        android:layout_gravity="center_horizontal"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="5dp"
+        android:layout_margin="10dp">
+
+        <Button
+            android:id="@+id/btn_Logout"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:scaleType="fitXY"
+            android:background="@mipmap/logout"/>
+
+        <TextView
+            android:id="@+id/txv_UserEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@null"
+            android:textColor="@color/colorGreenLight"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/gl_main"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+
+
 
     <!-- 優惠券按鈕 -->
     <Button
@@ -86,6 +100,7 @@
         android:id="@+id/txv_timeview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:text="來抽獎吧!! "
         android:textSize="25dp"
@@ -112,7 +127,7 @@
         app:layout_constraintTop_toTopOf="@id/imgv_roulette"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="1.0" />
-    <Button
+    <ImageButton
         android:id="@+id/btn_classify"
         android:layout_width="80dp"
         android:layout_height="70dp"

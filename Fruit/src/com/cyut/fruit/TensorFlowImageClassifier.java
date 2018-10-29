@@ -19,10 +19,6 @@ import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.os.Trace;
 import android.util.Log;
-
-import org.tensorflow.Operation;
-import org.tensorflow.contrib.android.TensorFlowInferenceInterface;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -32,13 +28,16 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Vector;
+import org.tensorflow.Operation;
+import org.tensorflow.contrib.android.TensorFlowInferenceInterface;
 
 /** A classifier specialized to label images using TensorFlow. */
 public class TensorFlowImageClassifier implements Classifier {
   private static final String TAG = "TensorFlowImageClassifier";
 
   // Only return this many results with at least this confidence.
-  private static final int MAX_RESULTS = 3;
+  //更改顯示資料量
+  private static final int MAX_RESULTS = 1;
   private static final float THRESHOLD = 0.1f;
 
   // Config values.
@@ -75,14 +74,14 @@ public class TensorFlowImageClassifier implements Classifier {
    * @throws IOException
    */
   public static Classifier create(
-          AssetManager assetManager,
-          String modelFilename,
-          String labelFilename,
-          int inputSize,
-          int imageMean,
-          float imageStd,
-          String inputName,
-          String outputName) {
+      AssetManager assetManager,
+      String modelFilename,
+      String labelFilename,
+      int inputSize,
+      int imageMean,
+      float imageStd,
+      String inputName,
+      String outputName) {
     TensorFlowImageClassifier c = new TensorFlowImageClassifier();
     c.inputName = inputName;
     c.outputName = outputName;
@@ -160,27 +159,27 @@ public class TensorFlowImageClassifier implements Classifier {
 
     // Find the best classifications.
     PriorityQueue<Recognition> pq =
-            new PriorityQueue<Recognition>(
-                    3,
-                    new Comparator<Recognition>() {
-                      @Override
-                      public int compare(Recognition lhs, Recognition rhs) {
-                        // Intentionally reversed to put high confidence at the head of the queue.
-                        return Float.compare(rhs.getConfidence(), lhs.getConfidence());
-                      }
-                    });
+        new PriorityQueue<Recognition>(
+            3,
+            new Comparator<Recognition>() {
+              @Override
+              public int compare(Recognition lhs, Recognition rhs) {
+                // Intentionally reversed to put high confidence at the head of the queue.
+                return Float.compare(rhs.getConfidence(), lhs.getConfidence());
+              }
+            });
 
     for (int i = 0; i < outputs.length; ++i) {
       if (outputs[i] > THRESHOLD) {
-        String t,ans;
+          String t,ans;
         //使用BigDecimal達成小數點處理
         BigDecimal b = new BigDecimal(outputs[i]);
         //轉成小數點第二位
         double f1 = b.setScale(2,   BigDecimal.ROUND_HALF_UP).doubleValue();
         pq.add(
-                new Recognition(
-                        //記得用(float)轉回浮點數型態
-                        "" + i, labels.size() > i ? labels.get(i) : "unknown", (float) f1, null));
+            new Recognition(
+                //記得用(float)轉回浮點數型態
+                "" + i, labels.size() > i ? labels.get(i) : "unknown", (float) f1, null));
       }
     }
     final ArrayList<Recognition> recognitions = new ArrayList<Recognition>();

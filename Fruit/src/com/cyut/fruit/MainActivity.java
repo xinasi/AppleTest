@@ -1,27 +1,28 @@
 package com.cyut.fruit;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.preference.PreferenceManager;
+import android.os.Handler;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.RotateAnimation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.app.AlertDialog;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.os.CountDownTimer;
 
+import java.util.Random;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.view.animation.Animation;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.RotateAnimation;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -32,9 +33,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.StorageReference;
 
-import com.cyut.fruit.R;
-
-import java.util.Random;
+import com.cyut.fruit.R; // Explicit import needed for internal Google builds.
 
 
 public class MainActivity extends Activity implements Animation.AnimationListener {
@@ -55,6 +54,7 @@ public class MainActivity extends Activity implements Animation.AnimationListene
     FirebaseDatabase mdatabase;
     DatabaseReference databaseReference; // 取得資料庫的參照
     private Button btn_Logout, btn_Coupon;
+
 
 
 
@@ -81,15 +81,9 @@ public class MainActivity extends Activity implements Animation.AnimationListene
         Button btn_library = (Button)findViewById(R.id.btn_library);
         btn_library.setOnClickListener(btn_libraryListner);
         // 取得辨識id
-        Button btn_classify = (Button)findViewById(R.id.btn_classify);
-        final AlertDialog mutiItemDialog = getMutiItemDialog(new String[]{"蘋果產地","蘋果甜度","水果種類"});
-        btn_classify.setOnClickListener(new Button.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                //顯示對話框
-                mutiItemDialog.show();
-            }
-        });
+        ImageButton btn_classify = (ImageButton)findViewById(R.id.btn_classify);
+        btn_classify.setOnClickListener(mutiItemDialog_listneer);
+
         /* 身分驗證 */
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -100,7 +94,7 @@ public class MainActivity extends Activity implements Animation.AnimationListene
         FirebaseUser user = firebaseAuth.getCurrentUser();
         txv_UserEmail = (TextView) findViewById(R.id.txv_UserEmail); //取得歡迎使用者id
         String [] EmailSplit = user.getEmail().split("@");
-        txv_UserEmail.setText("Welcome!\n" + EmailSplit[0]); //顯示歡迎詞
+        txv_UserEmail.setText(EmailSplit[0]); //顯示歡迎詞
         btn_Logout = (Button) findViewById(R.id.btn_Logout); //取得登出id
         btn_Logout.setOnClickListener(btn_LogouListner);
         btn_Coupon = (Button) findViewById(R.id.btn_Coupon); //取得優惠券按鈕id
@@ -144,8 +138,6 @@ public class MainActivity extends Activity implements Animation.AnimationListene
 
                             String image = couponurl1;
                             Coupon coupon = new Coupon(image);
-                            // 10/24 add
-                            //coupon.setKey(dataSnapshot.getKey());
                             databaseReference.push().setValue(coupon);
                             Toast.makeText(MainActivity.this, "寫入成功", Toast.LENGTH_LONG).show();
                             //couponDialog.dismiss();
@@ -390,11 +382,27 @@ public class MainActivity extends Activity implements Animation.AnimationListene
     private Button.OnClickListener btn_mainListner =
             new Button.OnClickListener() {
                 public void onClick(View v) {
-                    Intent main_intent = new Intent();
-                    main_intent.setClass(MainActivity.this, MainActivity.class);
-                    startActivity(main_intent);
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this,MainActivity.class);
+                    startActivity(intent);
+                    /* 10/10 呼叫按鈕動畫 */
+                    //btnAnimation(btn_main);
+                    /* 10/10 宣告Handler */
+                    //Handler btn_mainHandler = new Handler();
+                    /* 10/10 Delay0.45秒 */
+                    //btn_mainHandler.postDelayed(btn_main_delay, 450);
                 }
             };
+    /*
+    private Runnable btn_main_delay = new Runnable() {
+        public void run() {
+            // 0.45秒後跳至遊戲說明
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this,LibraryHome.class);
+            startActivity(intent);
+        }
+    };
+    */
     // 切換百科
     private Button.OnClickListener btn_libraryListner =
             new Button.OnClickListener() {
@@ -404,49 +412,103 @@ public class MainActivity extends Activity implements Animation.AnimationListene
                     startActivity(pedia_intent);
                 }
             };
+    //切換辨識
+    ImageButton.OnClickListener mutiItemDialog_listneer = new View.OnClickListener(){
+        @Override
+        public void onClick(View v){
+            final android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(MainActivity.this,R.style.CustomDialog);
+            View v2 = getLayoutInflater().inflate(R.layout.classifier_dialog, null);
 
-    public AlertDialog getMutiItemDialog(final String[] items) {
-        Builder builder = new Builder(this);
-        //設定對話框內的項目
-        builder.setItems(items, new DialogInterface.OnClickListener(){
-            @Override
-            public void onClick(DialogInterface dialog,int which){
-                //當使用者點選對話框時，切換不同頁面
-                if (items[which] == "蘋果產地") {
-                    Intent intent = new Intent();
-                    intent.setClass(MainActivity.this,PlaceActivity.class);
-                    startActivity(intent);
-                }
-                else if (items[which] == "蘋果甜度") {
-                    Intent intent = new Intent();
-                    intent.setClass(MainActivity.this,ClassifierActivity.class);
-                    startActivity(intent);
-                }
-                else if (items[which] == "水果種類"){
-                    Intent intent = new Intent();
-                    intent.setClass(MainActivity.this,TypeActivity.class);
-                    startActivity(intent);
-                }
+            final Button button1 = (Button)  v2.findViewById(R.id.button);
+            final Button button2 = (Button)  v2.findViewById(R.id.button2);
+            final Button button3 = (Button)  v2.findViewById(R.id.button3);
 
-            }
-        });
-        return builder.create();
-    }
+            final android.support.v7.app.AlertDialog alert = builder.create();
+
+            alert.setView(v2);
+            alert.show();
+
+
+            button1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, PlaceActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+            button2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, ClassifierActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+            button3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, TypeActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+        }
+
+    };
 
     // 登出事件
     private Button.OnClickListener btn_LogouListner =
             new Button.OnClickListener() {
                 public void onClick(View view) {
-                    if (view == btn_Logout){
-                        firebaseAuth.signOut();
-                        finish();
-                        startActivity(new Intent(MainActivity.this, LoginActivity.class));
-                    }
+                    final AlertDialog.Builder builder =new AlertDialog.Builder(MainActivity.this);
+                    final AlertDialog alert = builder.create();
+                    View v =getLayoutInflater().inflate(R.layout.logout,null);
+
+                    alert.setView(v);
+                    alert.show();
+
+                    Button logout = (Button) v.findViewById(R.id.logout);
+                    Button back = (Button) v.findViewById(R.id.back);
+
+                    logout.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            firebaseAuth.signOut();
+                            finish();
+                            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                        }
+                    });
+
+                    back.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            alert.cancel();
+                        }
+                    });
+
+
                 }
             };
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+    /* 10/30 按鈕動畫 */
+    public void btnAnimation(Button btnSet) {
+        /* 10/10 載入按鈕動畫 */
+        Animation btnAnim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.btn_bounce_anim);
+        /* 10/10 設定按鈕的動畫 */
+        btnSet.setAnimation(btnAnim);
+        /* 10/10 設定反彈幅度0.05, 頻率8 */
+        BounceInterpolator interpolator = new BounceInterpolator(0.05, 8);
+        /* 10/10 套用反彈效果 */
+        btnAnim.setInterpolator(interpolator);
+        /* 10/10 運行按鈕動畫 */
+        btnSet.startAnimation(btnAnim);
     }
 }

@@ -1,8 +1,5 @@
 package com.cyut.fruit;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
@@ -15,16 +12,16 @@ import android.util.Size;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
-
-import com.cyut.fruit.env.BorderedText;
-import com.cyut.fruit.env.ImageUtils;
-import com.cyut.fruit.env.Logger;
-
-import com.cyut.fruit.OverlayView.DrawCallback;
-import com.cyut.fruit.R;
+import android.content.Intent;
+import android.widget.ImageButton;
 
 import java.util.List;
 import java.util.Vector;
+import com.cyut.fruit.OverlayView.DrawCallback;
+import com.cyut.fruit.env.BorderedText;
+import com.cyut.fruit.env.ImageUtils;
+import com.cyut.fruit.env.Logger;
+import com.cyut.fruit.R; // Explicit import needed for internal Google builds.
 
 public class PlaceActivity extends CameraActivity implements OnImageAvailableListener {
     private static final Logger LOGGER = new Logger();
@@ -165,69 +162,17 @@ public class PlaceActivity extends CameraActivity implements OnImageAvailableLis
                         readyForNextImage();
                     }
                 });
-        //取得辨識按鈕的id
-        Button btn_c2c = (Button)findViewById(R.id.btn_classify2classify);
-        final AlertDialog mutiItemDialog = getMutiItemDialog(new String[]{"蘋果產地","蘋果甜度","水果種類"});
-        btn_c2c.setOnClickListener(new Button.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                //顯示對話框
-                mutiItemDialog.show();
-            }
-        });
 
-        //取得首頁按鈕的id
-        Button btn_c2m = (Button)findViewById(R.id.btn_classify2main);
-        btn_c2m.setOnClickListener(btn_c2mListner);
-
-        //取得百科按鈕的id
-        Button btn_c2l = (Button)findViewById(R.id.btn_classify2library);
-        btn_c2l.setOnClickListener(btn_c2lListner);
+        ImageButton backpage = (ImageButton) findViewById(R.id.backpage);
+        backpage.setOnClickListener(backpage_listneer);
     }
 
-    public AlertDialog getMutiItemDialog(final String[] items) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        //設定對話框內的項目
-        builder.setItems(items, new DialogInterface.OnClickListener(){
-            @Override
-            public void onClick(DialogInterface dialog,int which){
-                //當使用者點選對話框時，切換不同頁面
-                if (items[which] == "蘋果產地") {
-                    Intent intent = new Intent();
-                    intent.setClass(PlaceActivity.this, PlaceActivity.class);
-                    startActivity(intent);
-                }
-                else if (items[which] == "蘋果甜度") {
-                    Intent intent = new Intent();
-                    intent.setClass(PlaceActivity.this,ClassifierActivity.class);
-                    startActivity(intent);
-                }
-                else if (items[which] == "水果種類"){
-                    Intent intent = new Intent();
-                    intent.setClass(PlaceActivity.this,TypeActivity.class);
-                    startActivity(intent);
-                }
-
-            }
-        });
-        return builder.create();
-    }
-    //回到首頁
-    private Button.OnClickListener btn_c2mListner =
+    private ImageButton.OnClickListener backpage_listneer =
             new Button.OnClickListener() {
                 public void onClick(View v) {
                     Intent m_intent = new Intent();
                     m_intent.setClass(PlaceActivity.this,MainActivity.class);
                     startActivity(m_intent);
-                }
-            };
-    //回到百科
-    private Button.OnClickListener btn_c2lListner =
-            new Button.OnClickListener() {
-                public void onClick(View v) {
-                    Intent intent = new Intent();
-                    intent.setClass(PlaceActivity.this,LibraryHome.class);
-                    startActivity(intent);
                 }
             };
 

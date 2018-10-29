@@ -4,64 +4,129 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:background="#00000000"
+    tools:layout_editor_absoluteY="25dp">
+
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="0dp"
+        android:layout_width="384dp"
         android:layout_height="400dp"
         android:background="@mipmap/checkview"
-        android:alpha="0.7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"></ImageView>
 
-    <Switch
-        android:id="@+id/switch_red"
+    <LinearLayout
+        android:id="@+id/checklayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="83dp"
-        android:checked="false"
-        android:showText="true"
-        android:switchMinWidth="100dp"
-        android:textOff="甜"
-        android:textOn="不甜"
-        android:thumb="@drawable/thumb_red"
-        android:track="@drawable/switch_track"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/imageView">
 
-    <Switch
-        android:id="@+id/switch_blue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:checked="false"
-        android:showText="true"
-        android:switchMinWidth="100dp"
-        android:textOff="水分足夠"
-        android:textOn="水分不足"
-        android:thumb="@drawable/thumb_blue"
-        android:track="@drawable/switch_track"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch_red" />
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/checklayout_red"
+            android:orientation="vertical"
+            android:padding="5dp">
 
-    <Switch
-        android:id="@+id/switch_green"
-        android:layout_width="wrap_content"
+            <Switch
+                android:id="@+id/switch_red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:showText="true"
+                android:switchTextAppearance="@style/SwitchTextAppearance"
+                android:textOff="甜"
+                android:textOn="不甜"
+                android:thumb="@drawable/thumb_red"
+                android:track="@drawable/switch_track_red" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/checklayout_blue"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <Switch
+                android:id="@+id/switch_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:showText="true"
+                android:switchTextAppearance="@style/SwitchTextAppearance"
+                android:textOff="水分足夠"
+                android:textOn="水分不足"
+                android:thumb="@drawable/thumb_blue"
+                android:track="@drawable/switch_track_blue" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/checklayout_green"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <Switch
+                android:id="@+id/switch_green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:showText="true"
+                android:switchTextAppearance="@style/SwitchTextAppearance"
+                android:textOff="扎實"
+                android:textOn="軟嫩"
+                android:thumb="@drawable/thumb_green"
+                android:track="@drawable/switch_track_green" />
+        </LinearLayout>
+
+    </LinearLayout>>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:checked="false"
-        android:showText="true"
-        android:switchMinWidth="100dp"
-        android:textOff="扎實"
-        android:textOn="軟嫩"
-        android:thumb="@drawable/thumb_green"
-        android:track="@drawable/switch_track"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch_blue" />
+        app:layout_constraintTop_toBottomOf="@+id/checklayout">
+
+        <ImageButton
+            android:id="@+id/checkback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="#00000000"
+            android:src="@mipmap/checkback"></ImageButton>
+
+        <ImageButton
+            android:id="@+id/checkgo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="#00000000"
+            android:src="@mipmap/checkgo"></ImageButton>
+
+
+    </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>

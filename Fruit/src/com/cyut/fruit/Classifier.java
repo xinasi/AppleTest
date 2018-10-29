@@ -17,7 +17,6 @@ package com.cyut.fruit;
 
 import android.graphics.Bitmap;
 import android.graphics.RectF;
-
 import java.util.List;
 
 /**

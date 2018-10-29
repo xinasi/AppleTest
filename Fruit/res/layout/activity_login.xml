@@ -4,98 +4,130 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
+    tools:context="com.cyut.fruit.LoginActivity"
     android:background="#000000">
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="#FFFFFF">
+            android:id="@+id/login_bk"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="#FFFFFF"
+        >
+
+
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/fruiticon"
+            />
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="User Login"
+            android:text="AI 要即實"
             android:textSize="25dp"
-            android:gravity="center"
             android:textStyle="bold"
-            android:layout_margin="15dp"/>
+            android:textColor="#000000"
+            android:layout_gravity="center"/>
 
-        <EditText
-            android:layout_margin="15dp"
-            android:id="@+id/editTextEmail"
+
+
+
+
+        <!---Account -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="請輸入Email"
-            android:inputType="textEmailAddress"/>
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="5dp">
 
-        <EditText
-            android:layout_margin="15dp"
-            android:id="@+id/editTextPassword"
+            <ImageView
+                android:layout_marginRight="7dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/user" />
+
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Account"
+                android:inputType="textEmailAddress"
+                android:textStyle="bold"
+                android:textColor="#107FD9"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <!---Password -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="請輸入密碼"
-            android:inputType="textPassword"/>
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="5dp">
+
+            <ImageView
+                android:layout_marginRight="7dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/password"
+                />
+
+            <EditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textStyle="bold"
+                android:textColor="#107FD9"
+                android:gravity="center"/>
+        </LinearLayout>
+
+
+
 
         <Button
-            android:layout_margin="15dp"
-            android:id="@+id/btn_SignIn"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/buttonSignin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/signin"
-            android:textAllCaps="false"/>
+            android:text="SIGN IN"
+            android:textStyle="bold"
+            android:background="@drawable/btn_user">
+        </Button>
 
         <TextView
             android:layout_margin="15dp"
             android:id="@+id/textViewSignup"
-            android:text="建立帳戶"
+            android:text="Not have an account?  Signup here"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center">
+            android:textAlignment="center"
+            android:gravity="center">
         </TextView>
-
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/btn_GoogleSignIn"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
-
-        <TextView
-            android:id="@+id/textViewName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:text=""
-            android:gravity="center"
-            android:textSize="20dp"
-            android:textColor="#000"
-            />
-
-        <TextView
-            android:id="@+id/textViewEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/textViewName"
-            android:text=""
-            android:gravity="center"
-            android:textSize="20dp"
-            android:textColor="#000"
-            />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -1,64 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?><!--
  Copyright 2016 The TensorFlow Authors. All Rights Reserved.
-
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
-
      http://www.apache.org/licenses/LICENSE-2.0
-
  Unless required by applicable law or agreed to in writing, software
  distributed under the License is distributed on an "AS IS" BASIS,
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  See the License for the specific language governing permissions and
  limitations under the License.
 -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <com.cyut.fruit.AutoFitTextureView
-        android:id="@+id/texture"
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
+        android:layout_height="150dp"
+        android:background="@drawable/top_underline"
+        >
+        <ImageButton
+            android:id="@+id/backpage"
+            android:layout_width="15dp"
+            android:layout_height="30dp"
+            android:background="@mipmap/back7"
+            android:layout_margin="20dp"
+            android:layout_alignParentRight="true"
+            android:scaleType="fitCenter"
+            />
 
-    <com.cyut.fruit.RecognitionScoreView
-        android:id="@+id/results"
+        <com.cyut.fruit.RecognitionScoreView
+            android:id="@+id/results"
+            android:layout_width="260dp"
+            android:layout_height="120dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="115dp"
-        android:layout_alignParentTop="true"
-        android:background="@mipmap/title_classify"/>
+        android:layout_height="match_parent">
 
-    <com.cyut.fruit.OverlayView
-        android:id="@+id/debug_overlay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
+        <com.cyut.fruit.AutoFitTextureView
+            android:id="@+id/texture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"/>
 
-    <Button
-        android:id="@+id/btn_classify2classify"
-        android:layout_width="80dp"
-        android:layout_height="70dp"
-        android:background="@mipmap/btn_classify"
-        android:layout_toStartOf="@id/btn_classify2main"
-        android:layout_alignParentBottom="true"/>
+        <com.cyut.fruit.OverlayView
+            android:id="@+id/debug_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true" />
 
-    <Button
-        android:id="@+id/btn_classify2main"
-        android:layout_width="80dp"
-        android:layout_height="70dp"
-        android:background="@mipmap/btn_main"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"/>
 
-    <Button
-        android:id="@+id/btn_classify2library"
-        android:layout_width="80dp"
-        android:layout_height="70dp"
-        android:background="@mipmap/btn_library"
-        android:layout_toEndOf="@id/btn_classify2main"
-        android:layout_alignParentBottom="true"/>
-</RelativeLayout>
+    </RelativeLayout>>
+
+
+
+
+
+
+
+
+
+</LinearLayout>

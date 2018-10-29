@@ -40,13 +40,10 @@ import android.view.KeyEvent;
 import android.view.Surface;
 import android.view.WindowManager;
 import android.widget.Toast;
-
+import java.nio.ByteBuffer;
 import com.cyut.fruit.env.ImageUtils;
 import com.cyut.fruit.env.Logger;
-
-import com.cyut.fruit.R;
-
-import java.nio.ByteBuffer;
+import com.cyut.fruit.R; // Explicit import needed for internal Google builds.
 
 
 public abstract class CameraActivity extends Activity

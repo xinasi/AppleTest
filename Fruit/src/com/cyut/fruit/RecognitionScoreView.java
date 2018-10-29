@@ -17,6 +17,7 @@ package com.cyut.fruit;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -42,8 +43,15 @@ public class RecognitionScoreView extends View implements ResultsView {
     fgPaint = new Paint();
     fgPaint.setTextSize(textSizePx);
 
+    int fgcolor = Color.rgb(250 , 250,250);
+    int bgcolor = Color.rgb(47,79,79);
+
+    fgPaint.setColor(fgcolor);
+
+
     bgPaint = new Paint();
-    bgPaint.setColor(0xcc4285f4);
+    bgPaint.setColor(bgcolor);
+
   }
 
   @Override
@@ -54,8 +62,8 @@ public class RecognitionScoreView extends View implements ResultsView {
 
   @Override
   public void onDraw(final Canvas canvas) {
-    final int x = 10;
-    int y = (int) (fgPaint.getTextSize() * 1.5f);
+    final int x = 30;
+    int y = (int) (fgPaint.getTextSize() * 1.3f);
 
     canvas.drawPaint(bgPaint);
 

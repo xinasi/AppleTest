@@ -51,11 +51,6 @@ import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-
-import com.cyut.fruit.env.Logger;
-
-import com.cyut.fruit.R;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -63,6 +58,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
+import com.cyut.fruit.env.Logger;
+import com.cyut.fruit.R; // Explicit import needed for internal Google builds.
 
 public class CameraConnectionFragment extends Fragment {
   private static final Logger LOGGER = new Logger();
@@ -87,7 +84,7 @@ public class CameraConnectionFragment extends Fragment {
   }
 
   /**
-   * {@link TextureView.SurfaceTextureListener} handles several lifecycle events on a
+   * {@link android.view.TextureView.SurfaceTextureListener} handles several lifecycle events on a
    * {@link TextureView}.
    */
   private final TextureView.SurfaceTextureListener surfaceTextureListener =
@@ -147,12 +144,12 @@ public class CameraConnectionFragment extends Fragment {
   private Integer sensorOrientation;
 
   /**
-   * The {@link Size} of camera preview.
+   * The {@link android.util.Size} of camera preview.
    */
   private Size previewSize;
 
   /**
-   * {@link CameraDevice.StateCallback}
+   * {@link android.hardware.camera2.CameraDevice.StateCallback}
    * is called when {@link CameraDevice} changes its state.
    */
   private final CameraDevice.StateCallback stateCallback =
@@ -200,7 +197,7 @@ public class CameraConnectionFragment extends Fragment {
   private ImageReader previewReader;
 
   /**
-   * {@link CaptureRequest.Builder} for the camera preview
+   * {@link android.hardware.camera2.CaptureRequest.Builder} for the camera preview
    */
   private CaptureRequest.Builder previewRequestBuilder;
 
@@ -565,7 +562,7 @@ public class CameraConnectionFragment extends Fragment {
   }
 
   /**
-   * Configures the necessary {@link Matrix} transformation to `mTextureView`.
+   * Configures the necessary {@link android.graphics.Matrix} transformation to `mTextureView`.
    * This method should be called after the camera preview size is determined in
    * setUpCameraOutputs and also the size of `mTextureView` is fixed.
    *
