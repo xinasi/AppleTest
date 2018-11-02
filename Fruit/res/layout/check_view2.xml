@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    tools:layout_editor_absoluteY="25dp">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="384dp"
+        android:layout_height="400dp"
+        android:background="@mipmap/checkview"
+        android:orientation="vertical"></ImageView>
+
+
+
+        <!--Sweet and acid -->
+    <CheckBox
+        android:id="@+id/sweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="甜"
+        android:textStyle="bold"
+        android:theme="@style/MyCheckBox"
+        android:textColor="#0072e3"
+        app:layout_constraintEnd_toStartOf="@+id/acid"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        android:checked="false"/>
+
+    <CheckBox
+        android:id="@+id/acid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="124dp"
+        android:layout_marginTop="80dp"
+        android:text="酸"
+        android:textStyle="bold"
+        android:theme="@style/MyCheckBox"
+        android:textColor="#0072e3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:checked="false"/>
+
+
+    <CheckBox
+        android:id="@+id/enough"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="40dp"
+        android:text="水分足夠"
+        android:textStyle="bold"
+        android:theme="@style/MyCheckBox"
+        android:textColor="#0072e3"
+        app:layout_constraintEnd_toStartOf="@+id/notenough"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@+id/sweet"
+        app:layout_constraintTop_toBottomOf="@+id/sweet"
+        android:checked="false"/>
+
+    <CheckBox
+        android:id="@+id/notenough"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="40dp"
+        android:text="水分不足"
+        android:textStyle="bold"
+        android:theme="@style/MyCheckBox"
+        android:textColor="#0072e3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/acid"
+        app:layout_constraintTop_toBottomOf="@+id/acid"
+        android:checked="false"/>
+
+    <CheckBox
+        android:id="@+id/solid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="40dp"
+        android:text="口感扎實"
+        android:textStyle="bold"
+        android:theme="@style/MyCheckBox"
+        android:textColor="#0072e3"
+        app:layout_constraintEnd_toStartOf="@+id/soft"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/enough"
+        app:layout_constraintTop_toBottomOf="@+id/enough"
+        android:checked="false"/>
+
+    <CheckBox
+        android:id="@id/soft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="40dp"
+        android:text="口感鬆軟"
+        android:textStyle="bold"
+        android:theme="@style/MyCheckBox"
+        android:textColor="#0072e3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/notenough"
+        app:layout_constraintTop_toBottomOf="@+id/notenough"
+        android:checked="false"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/solid">
+
+        <ImageButton
+            android:id="@+id/checkback"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="20dp"
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            android:src="@mipmap/btn_cancel"></ImageButton>
+
+        <ImageButton
+            android:id="@+id/checkgo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="20dp"
+            android:background="#00000000"
+            android:scaleType="fitXY"
+            android:src="@mipmap/btn_confirm"></ImageButton>
+
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

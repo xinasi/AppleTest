@@ -29,5 +29,12 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="MyCheckBox" parent="Base.Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:colorControlActivated">#CD2626</item>
+        <item name="android:colorControlNormal">#0000e3</item>
+        <item name="android:colorControlHighlight">#4f4f4f</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
 
 </resources>

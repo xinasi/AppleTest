@@ -84,7 +84,6 @@
       <excludeFolder url="file://$MODULE_DIR$/gradleBuild/intermediates/annotation_processor_list" />
       <excludeFolder url="file://$MODULE_DIR$/gradleBuild/intermediates/apk_list" />
       <excludeFolder url="file://$MODULE_DIR$/gradleBuild/intermediates/blame" />
-      <excludeFolder url="file://$MODULE_DIR$/gradleBuild/intermediates/check-manifest" />
       <excludeFolder url="file://$MODULE_DIR$/gradleBuild/intermediates/compatible_screen_manifest" />
       <excludeFolder url="file://$MODULE_DIR$/gradleBuild/intermediates/incremental" />
       <excludeFolder url="file://$MODULE_DIR$/gradleBuild/intermediates/instant_run_merged_manifests" />

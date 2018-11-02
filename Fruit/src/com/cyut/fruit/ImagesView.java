@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.cyut.fruit.R;
-
 import java.util.ArrayList;
 
 public class ImagesView extends AppCompatActivity {
@@ -20,9 +18,12 @@ public class ImagesView extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle bag = intent.getExtras();
+        Bundle bag2 = intent.getExtras();
         ArrayList<Integer> test_bag = bag.getIntegerArrayList("image_put");
+        ArrayList<ArrayList<String>> check_result = (ArrayList<ArrayList<String>>) bag2.getSerializable("text_put");
+
         ViewPager viewpager = (ViewPager)findViewById(R.id.viewpager);
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(ImagesView.this, test_bag);
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(ImagesView.this, test_bag, check_result);
         viewpager.setAdapter(viewPagerAdapter);
 
         ImageButton backpage = (ImageButton) findViewById(R.id.backpage);

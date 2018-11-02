@@ -9,21 +9,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
-import com.cyut.fruit.R;
+import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ViewPagerAdapter extends PagerAdapter {
     private Context context;
     private LayoutInflater layoutInflater;
     AppCompatActivity activity;
     ArrayList<Integer> images = new ArrayList<Integer>();
+    ArrayList<ArrayList<String>> check_result = new ArrayList<ArrayList<String>>();
+    ArrayList<String> result = new ArrayList<>();
 
 
-    public ViewPagerAdapter(AppCompatActivity activity, ArrayList<Integer> images) {
+    public ViewPagerAdapter(AppCompatActivity activity, ArrayList<Integer> images,ArrayList<ArrayList<String>> check_result) {
         this.activity = activity;
         this.images = images;
+        this.check_result = check_result;
     }
 
 
@@ -51,6 +54,23 @@ public class ViewPagerAdapter extends PagerAdapter {
         View view = layoutInflater.inflate(R.layout.slide,null);
         ImageView imageView = (ImageView) view.findViewById(R.id.slideimg);
         imageView.setImageResource(images.get(position));
+
+        TextView textView = (TextView) view.findViewById(R.id.check_result);
+
+        //textView.setText((CharSequence) check_result.get(position));
+        //textView.setText(toString(check_result.get(position)));
+
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0 ; i < position+1 ;i++){
+            for (String value : check_result.get(position)){
+                builder.append(value);
+                builder.append("  ");
+                textView.setText(builder);
+            }
+            builder.delete(0 , builder.length());
+        }
+
+
 
 
         ViewPager vp = (ViewPager) container;

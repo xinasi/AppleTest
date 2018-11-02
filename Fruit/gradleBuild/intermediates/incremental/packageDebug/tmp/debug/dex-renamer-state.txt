@@ -1,4 +1,4 @@
-#Tue Oct 30 05:26:09 CST 2018
+#Fri Nov 02 13:35:10 CST 2018
 base.0=D\:\\Fruit\\gradleBuild\\intermediates\\transforms\\dexMerger\\debug\\0
 path.1=classes.dex
 renamed.1=classes2.dex

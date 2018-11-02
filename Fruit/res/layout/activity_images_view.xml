@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cyut.fruit.ImagesView"
+    tools:context=".ImagesView"
     android:orientation="vertical"
     >
 
@@ -15,7 +15,7 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.cyut.fruit.ImagesView">
+        tools:context=".ImagesView">
 
 
 
@@ -32,10 +32,10 @@
 
         <ImageButton
             android:id="@+id/backpage"
-            android:layout_width="15dp"
-            android:layout_height="30dp"
+            android:layout_width="10dp"
+            android:layout_height="20dp"
             android:background="@mipmap/back6"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

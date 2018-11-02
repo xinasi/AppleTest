@@ -74,9 +74,6 @@ public class MainActivity extends Activity implements Animation.AnimationListene
         // 取得禮物id
         ImageButton btn_gift = (ImageButton)findViewById(R.id.imgb_gift);
         btn_gift.setOnClickListener(imgb_giftListner);
-        // 取得首頁id
-        Button btn_main = (Button)findViewById(R.id.btn_main);
-        btn_main.setOnClickListener(btn_mainListner);
         // 取得百科id
         Button btn_library = (Button)findViewById(R.id.btn_library);
         btn_library.setOnClickListener(btn_libraryListner);
@@ -377,22 +374,6 @@ public class MainActivity extends Activity implements Animation.AnimationListene
                 }
             };
 
-
-    // 切換首頁
-    private Button.OnClickListener btn_mainListner =
-            new Button.OnClickListener() {
-                public void onClick(View v) {
-                    Intent intent = new Intent();
-                    intent.setClass(MainActivity.this,MainActivity.class);
-                    startActivity(intent);
-                    /* 10/10 呼叫按鈕動畫 */
-                    //btnAnimation(btn_main);
-                    /* 10/10 宣告Handler */
-                    //Handler btn_mainHandler = new Handler();
-                    /* 10/10 Delay0.45秒 */
-                    //btn_mainHandler.postDelayed(btn_main_delay, 450);
-                }
-            };
     /*
     private Runnable btn_main_delay = new Runnable() {
         public void run() {

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/imageview_bg3"
-    tools:context="com.cyut.fruit.MainActivity"
+    tools:context=".MainActivity"
     tools:layout_editor_absoluteY="25dp">
     <!-- 上方水平基準線 -->
     <android.support.constraint.Guideline
@@ -39,23 +39,13 @@
             android:layout_height="wrap_content"
             android:text="@null"
             android:textColor="@color/colorGreenLight"
-            android:textSize="15sp"
+            android:textSize="25sp"
             android:textStyle="bold"
             android:gravity="center"
             app:layout_constraintBottom_toTopOf="@id/gl_main"
             app:layout_constraintStart_toStartOf="parent" />
     </LinearLayout>
 
-
-
-    <!-- 優惠券按鈕 -->
-    <Button
-        android:id="@+id/btn_Coupon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="優惠券"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_gravity="center_horizontal"/>
 
     <!-- 轉盤 -->
     <ImageView
@@ -101,12 +91,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
         android:text="來抽獎吧!! "
         android:textSize="25dp"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/imgv_roulette"
+        app:layout_constraintBottom_toTopOf="@id/imgv_roulette"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"/>
     <!-- 中間垂直基準線 -->
@@ -122,25 +112,27 @@
         android:layout_width="60dp"
         android:layout_height="50dp"
         android:background="#00000000"
-        android:src="@mipmap/btn_gift"
         android:scaleType="centerInside"
-        app:layout_constraintTop_toTopOf="@id/imgv_roulette"
+        android:src="@mipmap/btn_gift"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@id/txv_timeview" />
     <ImageButton
         android:id="@+id/btn_classify"
         android:layout_width="80dp"
         android:layout_height="70dp"
+        android:layout_margin="10dp"
         android:background="@mipmap/btn_classify"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btn_main"
+        app:layout_constraintEnd_toStartOf="@id/btn_Coupon"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/btn_main"
+        android:id="@+id/btn_Coupon"
         android:layout_width="80dp"
         android:layout_height="70dp"
-        android:background="@mipmap/btn_main"
+        android:layout_margin="10dp"
+        android:background="@mipmap/btn_coupon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -150,9 +142,10 @@
         android:id="@+id/btn_library"
         android:layout_width="80dp"
         android:layout_height="70dp"
+        android:layout_margin="10dp"
         android:background="@mipmap/btn_library"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btn_main"
+        app:layout_constraintStart_toEndOf="@id/btn_Coupon"
         app:layout_constraintVertical_bias="1.0" />
 
 
