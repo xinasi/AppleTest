@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "335483891406-kv8pn3t6i4lmo4jeccl19artv1tprqh3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cyut.fruit",
+            "certificate_hash": "664cf888bb52eaf4b03dc8e995224620169938cb"
+          }
+        },
+        {
           "client_id": "335483891406-e15s6ai60f4rft63sfmk6eja4dj0sgbj.apps.googleusercontent.com",
           "client_type": 3
         }

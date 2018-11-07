@@ -31,10 +31,10 @@
         <ImageView
             android:id="@+id/rImageView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="centerInside"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
             android:adjustViewBounds="true"
-            android:background="@null"/>
+            android:src="@null"/>
 
         <TextView
             android:id="@+id/rDescriptionTv"

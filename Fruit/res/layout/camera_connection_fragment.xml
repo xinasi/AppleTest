@@ -23,7 +23,7 @@
         >
         <ImageButton
             android:id="@+id/backpage"
-            android:layout_width="15dp"
+            android:layout_width="25dp"
             android:layout_height="30dp"
             android:background="@mipmap/back7"
             android:layout_margin="20dp"

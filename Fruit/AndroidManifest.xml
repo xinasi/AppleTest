@@ -18,20 +18,22 @@
     package="com.cyut.fruit">
 
     <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
         android:resizeable="true"
         android:smallScreens="true"
-        android:normalScreens="true"
-        android:largeScreens="true"
-        android:xlargeScreens="true"
-        android:anyDensity="true" />
+        android:xlargeScreens="true" />
 
-    <!--<uses-sdk android:targetSdkVersion="27" />-->
+    <!-- <uses-sdk android:targetSdkVersion="27" /> -->
 
     <uses-permission android:name="android.permission.CAMERA" />
 
-    <uses-feature android:name="android.hardware.camera"
+    <uses-feature
+        android:name="android.hardware.camera"
         android:required="false" />
-    <uses-feature android:name="android.hardware.camera.autofocus"
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
         android:required="false" />
     <uses-feature
         android:name="android.software.leanback"
@@ -44,7 +46,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -54,7 +56,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="HardcodedDebugMode,MissingTvBanner">
         <activity
-            android:name="com.cyut.fruit.LoginActivity"
+            android:name=".LoginActivity"
             android:label="@string/activity_name_classification"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -64,16 +66,38 @@
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.cyut.fruit.MainActivity"/>
-        <activity android:name="com.cyut.fruit.ClassifierActivity" />
-        <activity android:name="com.cyut.fruit.PlaceActivity" />
-        <activity android:name="com.cyut.fruit.TypeActivity" />
-        <activity android:name="com.cyut.fruit.LibraryHome" />
-        <activity android:name="com.cyut.fruit.CheckView" />
-        <activity android:name="com.cyut.fruit.ImagesView" />
-        <activity android:name="com.cyut.fruit.GiftActivity"/>
-        <activity android:name="com.cyut.fruit.RouletteCouponActivity"/>
-        <activity android:name="com.cyut.fruit.RegisterActivity"/>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ClassifierActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PlaceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LibraryHome"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CheckView"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ImagesView"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".GiftActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RouletteCouponActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".GiftDetailActivity" />
+        <activity android:name=".ForgetPasswordActivity"></activity>
     </application>
 
 </manifest>

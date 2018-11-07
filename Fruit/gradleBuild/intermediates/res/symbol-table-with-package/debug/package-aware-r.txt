@@ -187,6 +187,7 @@ attr imageAspectRatioAdjust
 attr imageButtonStyle
 attr indeterminateProgressStyle
 attr initialActivityCount
+attr isDarkTheme
 attr isLightTheme
 attr itemPadding
 attr keylines
@@ -459,6 +460,7 @@ color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
 color control_background
+color dark_blue
 color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
@@ -503,6 +505,7 @@ color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
+color text_color_dark
 color tooltip_background_dark
 color tooltip_background_light
 dimen abc_action_bar_content_inset_material
@@ -723,6 +726,22 @@ drawable btn_classifity
 drawable btn_coupon_dialog
 drawable btn_coupon_dialog_lose
 drawable btn_end
+drawable btn_google_dark_disabled
+drawable btn_google_dark_focus
+drawable btn_google_dark_normal
+drawable btn_google_dark_pressed
+drawable btn_google_light_disabled
+drawable btn_google_light_focus
+drawable btn_google_light_normal
+drawable btn_google_light_pressed
+drawable btn_google_signin_dark_disabled
+drawable btn_google_signin_dark_focus
+drawable btn_google_signin_dark_normal
+drawable btn_google_signin_dark_pressed
+drawable btn_google_signin_light_disabled
+drawable btn_google_signin_light_focus
+drawable btn_google_signin_light_normal
+drawable btn_google_signin_light_pressed
 drawable btn_start
 drawable btn_start_event
 drawable btn_user
@@ -748,12 +767,17 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable coupon_default
+drawable dark_theme_google_icon_selector
 drawable enough_thumb
 drawable fruiticon
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_action_info
 drawable ic_launcher
+drawable light_theme_google_icon_selector
+drawable logout
+drawable logview
 drawable newicon
 drawable notenough_thumb
 drawable notification_action_background
@@ -768,9 +792,9 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
-drawable picture
 drawable soft_thumb
 drawable solid_thumb
+drawable store_default
 drawable sweet_thumb
 drawable switch_track
 drawable switch_track_blue
@@ -810,6 +834,11 @@ id action_mode_close_button
 id action_text
 id actions
 id activity_chooser_view_content
+id activity_date
+id activity_method
+id activity_notice
+id activity_place
+id activity_title
 id add
 id adjust_height
 id adjust_width
@@ -820,6 +849,8 @@ id applebtn
 id async
 id auto
 id back
+id back_toGift
+id back_toMain
 id backpage
 id barrier
 id beginning
@@ -828,9 +859,9 @@ id bottom
 id btn_Coupon
 id btn_CouponAccept
 id btn_CouponAcceptLose
+id btn_Library
 id btn_Logout
-id btn_classify
-id btn_library
+id btn_resetPWD
 id button
 id button2
 id button3
@@ -840,6 +871,7 @@ id buttonSignin
 id button_picture
 id button_picture2
 id button_picture3
+id cancel
 id cancel_action
 id center
 id center_horizontal
@@ -851,6 +883,7 @@ id checkback
 id checkbox
 id checkgo
 id chronometer
+id classifier_dialog_back
 id clip_horizontal
 id clip_vertical
 id collapseActionView
@@ -859,6 +892,7 @@ id contentPanel
 id custom
 id customPanel
 id dark
+id date
 id debug_overlay
 id decor_content_parent
 id default_activity_button
@@ -869,18 +903,25 @@ id disableHome
 id editTextEmail
 id editTextPassword
 id edit_query
+id edt_EmailforResetPWD
 id end
 id end_padder
 id enough
+id exit
 id expand_activities_button
 id expanded_menu
 id fill
 id fill_horizontal
 id fill_vertical
 id forever
+id forgetPassword
 id gl_center
+id gl_left
 id gl_main
+id gl_right
+id gl_top
 id gone
+id googleSignIn
 id groups
 id guavabtn
 id guideline2
@@ -894,10 +935,12 @@ id icon_only
 id ifRoom
 id image
 id imageView
-id imgb_gift
-id imgb_start
+id imgb_Classify
+id imgb_Gift
+id imgb_Start
 id imgv_CouponResult
 id imgv_CouponResultLose
+id imgv_gift
 id imgv_pointer
 id imgv_roulette
 id info
@@ -910,6 +953,7 @@ id light
 id line1
 id line3
 id linearLayout
+id linearLayout5
 id listMode
 id list_item
 id list_text_item
@@ -917,6 +961,7 @@ id login_bk
 id logout
 id media_actions
 id message
+id method
 id middle
 id multiply
 id n_enoght
@@ -924,6 +969,7 @@ id never
 id none
 id normal
 id notenough
+id notice
 id notification_background
 id notification_main_column
 id notification_main_column_container
@@ -932,6 +978,7 @@ id parent
 id parentPanel
 id pearbtn
 id percent
+id place
 id progress_circular
 id progress_horizontal
 id rDescriptionTv
@@ -998,6 +1045,7 @@ id titleDividerNoCustom
 id title_template
 id top
 id topPanel
+id txvToSignIn
 id txv_CouponMessage
 id txv_CouponMessageLose
 id txv_CouponTitle
@@ -1047,17 +1095,21 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_camera
 layout activity_check_view
+layout activity_forget_password
 layout activity_gift
+layout activity_gift_detail
 layout activity_images_view
 layout activity_library_home
 layout activity_login
 layout activity_main
 layout activity_register
 layout camera_connection_fragment
+layout camera_connection_fregment_one_result
 layout check_view2
 layout classifier_dialog
 layout coupon_dialog
 layout coupon_dialog_lose
+layout exit_event
 layout list_text_item
 layout logout
 layout notification_action
@@ -1083,7 +1135,6 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout slide
 layout support_simple_spinner_dropdown_item
-layout test
 mipmap apple
 mipmap apple_01
 mipmap apple_02
@@ -1091,6 +1142,7 @@ mipmap apple_03
 mipmap apple_04
 mipmap back6
 mipmap back7
+mipmap black_back_left
 mipmap btn_cancel
 mipmap btn_classify
 mipmap btn_confirm
@@ -1111,7 +1163,14 @@ mipmap kiwi
 mipmap kiwi_01
 mipmap kiwi_02
 mipmap kiwi_03
+mipmap log_bg
 mipmap logout
+mipmap logout2
+mipmap logout_cancel
+mipmap logout_confirm
+mipmap logtext
+mipmap logview
+mipmap notresult
 mipmap password
 mipmap pear
 mipmap pear_01
@@ -1123,7 +1182,12 @@ mipmap pitaya_01
 mipmap pitaya_02
 mipmap place
 mipmap pointer
+mipmap register
+mipmap register2
+mipmap register3
 mipmap roulette
+mipmap send
+mipmap singin
 mipmap sweet
 mipmap type
 mipmap user
@@ -1156,7 +1220,12 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string activity_date
+string activity_method
 string activity_name_classification
+string activity_notice
+string activity_place
+string activity_title
 string app_name
 string camera_error
 string common_google_play_services_enable_button
@@ -1177,21 +1246,29 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string date
 string default_web_client_id
 string description
 string description_info
 string fcm_fallback_notification_channel_label
 string firebase_database_url
+string forget_pwd
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
+string google_sign_in
+string google_sign_up
+string google_signin
 string google_storage_bucket
 string input_error_email
 string input_error_email_invalid
 string input_error_password
 string input_error_password_length
 string main_name
+string method
+string notice
+string place
 string place_page
 string project_id
 string registration_lose
@@ -1201,6 +1278,7 @@ string search_menu_title
 string select_classify
 string status_bar_notification_info_overflow
 string sweet_page
+string title
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -1578,6 +1656,7 @@ styleable AppCompatTextView android_textAppearance autoSizeMaxTextSize autoSizeM
 styleable AppCompatTheme android_windowIsFloating android_windowAnimationStyle actionBarDivider actionBarItemBackground actionBarPopupTheme actionBarSize actionBarSplitStyle actionBarStyle actionBarTabBarStyle actionBarTabStyle actionBarTabTextStyle actionBarTheme actionBarWidgetTheme actionButtonStyle actionDropDownStyle actionMenuTextAppearance actionMenuTextColor actionModeBackground actionModeCloseButtonStyle actionModeCloseDrawable actionModeCopyDrawable actionModeCutDrawable actionModeFindDrawable actionModePasteDrawable actionModePopupWindowStyle actionModeSelectAllDrawable actionModeShareDrawable actionModeSplitBackground actionModeStyle actionModeWebSearchDrawable actionOverflowButtonStyle actionOverflowMenuStyle activityChooserViewStyle alertDialogButtonGroupStyle alertDialogCenterButtons alertDialogStyle alertDialogTheme autoCompleteTextViewStyle borderlessButtonStyle buttonBarButtonStyle buttonBarNegativeButtonStyle buttonBarNeutralButtonStyle buttonBarPositiveButtonStyle buttonBarStyle buttonStyle buttonStyleSmall checkboxStyle checkedTextViewStyle colorAccent colorBackgroundFloating colorButtonNormal colorControlActivated colorControlHighlight colorControlNormal colorError colorPrimary colorPrimaryDark colorSwitchThumbNormal controlBackground dialogPreferredPadding dialogTheme dividerHorizontal dividerVertical dropDownListViewStyle dropdownListPreferredItemHeight editTextBackground editTextColor editTextStyle homeAsUpIndicator imageButtonStyle listChoiceBackgroundIndicator listDividerAlertDialog listMenuViewStyle listPopupWindowStyle listPreferredItemHeight listPreferredItemHeightLarge listPreferredItemHeightSmall listPreferredItemPaddingLeft listPreferredItemPaddingRight panelBackground panelMenuListTheme panelMenuListWidth popupMenuStyle popupWindowStyle radioButtonStyle ratingBarStyle ratingBarStyleIndicator ratingBarStyleSmall searchViewStyle seekBarStyle selectableItemBackground selectableItemBackgroundBorderless spinnerDropDownItemStyle spinnerStyle switchStyle textAppearanceLargePopupMenu textAppearanceListItem textAppearanceListItemSecondary textAppearanceListItemSmall textAppearancePopupMenuHeader textAppearanceSearchResultSubtitle textAppearanceSearchResultTitle textAppearanceSmallPopupMenu textColorAlertDialogListItem textColorSearchUrl toolbarNavigationButtonStyle toolbarStyle tooltipForegroundColor tooltipFrameBackground viewInflaterClass windowActionBar windowActionBarOverlay windowActionModeOverlay windowFixedHeightMajor windowFixedHeightMinor windowFixedWidthMajor windowFixedWidthMinor windowMinWidthMajor windowMinWidthMinor windowNoTitle
 styleable ButtonBarContainerTheme metaButtonBarButtonStyle metaButtonBarStyle
 styleable ButtonBarLayout allowStacking
+styleable ButtonStyleable android_text isDarkTheme
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable ColorStateListItem android_color android_alpha alpha
 styleable CompoundButton android_button buttonTint buttonTintMode

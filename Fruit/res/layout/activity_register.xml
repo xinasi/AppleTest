@@ -4,125 +4,165 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cyut.fruit.RegisterActivity"
-    android:background="#000000"
-    >
+    tools:context=".LoginActivity"
+    android:background="@mipmap/log_bg">
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_margin="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="#FFFFFF"
+        android:background="@mipmap/logview"
         >
 
-        <ImageView
+        <LinearLayout
+            android:id="@+id/login_bk"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="22dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/logout"
+            >
+
+
+
+            <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="15dp"
                 android:layout_marginTop="10dp"
                 android:scaleType="fitXY"
                 android:src="@mipmap/fruiticon"
-            />
+                />
 
-        <TextView
+            <ImageView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="AI 要即實"
+                android:layout_marginBottom="20dp"
+                android:background="@mipmap/logtext"
                 android:textSize="25dp"
+                android:scaleType="fitCenter"
                 android:textStyle="bold"
-            android:textColor="#000000"
+                android:textColor="#000000"
                 android:layout_gravity="center"/>
 
 
 
 
 
-        <!---Account -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:padding="5dp">
-
-            <ImageView
-                android:layout_marginRight="7dp"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:scaleType="fitXY"
-                android:src="@mipmap/user" />
-
-            <EditText
-                android:id="@+id/editTextEmail"
+            <!---Account -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Account"
-                android:inputType="textEmailAddress"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_marginRight="7dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/user" />
+
+                <EditText
+                    android:id="@+id/editTextEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:textStyle="bold"
+                    android:textColor="#107FD9"
+                    android:paddingLeft="15dp"
+                    android:gravity="left"/>
+
+            </LinearLayout>
+
+            <!---Password -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_marginRight="7dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/password"
+                    />
+
+                <EditText
+                    android:id="@+id/editTextPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:textStyle="bold"
+                    android:textColor="#107FD9"
+                    android:paddingLeft="15dp"
+                    android:gravity="left"/>
+            </LinearLayout>
+
+
+
+
+            <Button
+                android:layout_marginBottom="5dp"
+                android:id="@+id/buttonRegister"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
                 android:textStyle="bold"
-                android:textColor="#107FD9"
-                android:gravity="center"/>
+                android:layout_gravity="center"
+                android:background="@mipmap/register">
+            </Button>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_margin="15dp">
+                <TextView
+                    android:layout_marginRight="5dp"
+                    android:text="已有帳號"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/textViewSignin"
+                    android:text="登入"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    style="under"
+                    android:textColor="#F51A1E">
+                </TextView>
+            </LinearLayout>
 
         </LinearLayout>
 
-        <!---Password -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:padding="5dp">
-
-            <ImageView
-                android:layout_marginRight="7dp"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:scaleType="fitXY"
-                android:src="@mipmap/password"
-                />
-
-            <EditText
-                android:id="@+id/editTextPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:textStyle="bold"
-                android:textColor="#107FD9"
-                android:gravity="center"/>
-        </LinearLayout>
-
-        <Button
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
-            android:id="@+id/buttonRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Register"
-            android:background="@drawable/btn_user"
-            android:textStyle="bold">
-        </Button>
-
-        <TextView
-            android:id="@+id/textViewSignin"
-            android:text="Alread Registered? Sign in here"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:layout_margin="15dp"
-            android:gravity="center">
-        </TextView>
 
     </LinearLayout>>
 

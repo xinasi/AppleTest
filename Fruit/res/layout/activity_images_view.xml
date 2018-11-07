@@ -23,7 +23,7 @@
             android:id="@+id/viewpager"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/imageview_bg3"
+            android:background="@mipmap/notresult"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,11 +32,11 @@
 
         <ImageButton
             android:id="@+id/backpage"
-            android:layout_width="10dp"
-            android:layout_height="20dp"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
             android:background="@mipmap/back6"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:scaleType="fitCenter"/>

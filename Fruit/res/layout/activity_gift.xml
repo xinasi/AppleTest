@@ -6,85 +6,21 @@
     android:layout_height="match_parent"
     tools:context="com.cyut.fruit.GiftActivity"
     android:orientation="vertical">
-    <!--
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TableRow android:layout_marginHorizontal="4dp" android:gravity="center">
-            <ImageButton
-                android:id="@+id/btn_RouletteCoupon"
-                android:layout_weight="1"
-                android:layout_height="60dp"
-                android:text="轉盤"
-                android:background="#00000000"
-                android:scaleType="centerInside"
-                android:src="@mipmap/coupon_roulette" />
+    <ImageButton
+        android:id="@+id/back_toMain"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@mipmap/black_back_left"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/btn_FruitBasketCoupon"
-                android:layout_weight="1"
-                android:layout_height="60dp"
-                android:text="果籃有禮"
-                android:background="#00000000"
-                android:scaleType="centerInside"
-                android:src="@mipmap/coupon_basket"/>
-        </TableRow>
-
-    </TableLayout>
--->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-    <!--
-        <android.support.constraint.ConstraintLayout
-            android:layout_weight = "2"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-
-            <ImageButton
-                android:id="@+id/imgb_g2c"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@mipmap/btn_classify"
-                android:background="#00000000"
-                android:scaleType="centerInside"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/imgb_g2m"
-                app:layout_constraintVertical_bias="1.0" />
-
-            <ImageButton
-                android:id="@+id/imgb_g2m"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@mipmap/btn_main"
-                android:background="#00000000"
-                android:scaleType="centerInside"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
-
-            <ImageButton
-                android:id="@+id/imgb_g2l"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@mipmap/btn_library"
-                android:background="#00000000"
-                android:scaleType="centerInside"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/imgb_g2m"
-                app:layout_constraintVertical_bias="1.0" />
-        </android.support.constraint.ConstraintLayout>
-
-        -->
-
-
-
-
-
-
 
 </LinearLayout>
